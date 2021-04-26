@@ -41,7 +41,6 @@ class AuthController extends Controller
     }
 
     public function attachPlayerIDtoLoggedUser(Request $request){
-            dd($request->all());
             $user = $request->user();
             $user->playerID = $request->playerID;
             $user->save();
