@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a101c2f-0b73-457e-93e0-908a1ac36f0d" name="Default Changelist" comment="" />
+    <list default="true" id="6a101c2f-0b73-457e-93e0-908a1ac36f0d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +12,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -123,6 +128,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1phv6bykaBnsz22YIcn9Io3C3wn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -130,9 +136,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -149,18 +160,60 @@
       <option name="presentableId" value="Default" />
       <updated>1615647962613</updated>
       <workItem from="1615647963854" duration="955000" />
-      <workItem from="1615659497243" duration="6184000" />
+      <workItem from="1615659497243" duration="6517000" />
+      <workItem from="1615680136036" duration="466000" />
+      <workItem from="1616193685887" duration="9000" />
+      <workItem from="1617985235412" duration="4083000" />
+      <workItem from="1618863801540" duration="31000" />
+      <workItem from="1619393781504" duration="1960000" />
     </task>
+    <task id="LOCAL-00001" summary="Implementação do backend .">
+      <created>1617988094501</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1617988094501</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Implementação do backend .">
+      <created>1619393796825</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1619393796825</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Implementação do backend ." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementação do backend ." />
   </component>
   <component name="WindowStateProjectService">
     <state x="458" y="209" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615661455195">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="209" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1615661455195" />
+    <state x="303" y="25" key="CommitChangelistDialog2" timestamp="1619393796565">
+      <screen x="0" y="25" width="1440" height="820" />
+    </state>
+    <state x="303" y="25" key="CommitChangelistDialog2/0.25.1440.820@0.25.1440.820" timestamp="1619393796565" />
+    <state x="571" y="355" key="Github.ShareDialog" timestamp="1615679061102">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="571" y="355" key="Github.ShareDialog/0.0.1440.900@0.0.1440.900" timestamp="1615679061102" />
+    <state x="463" y="76" key="Github.UntrackedFilesDialog" timestamp="1615679074014">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="463" y="76" key="Github.UntrackedFilesDialog/0.0.1440.900@0.0.1440.900" timestamp="1615679074014" />
+    <state x="319" y="169" key="Vcs.Push.Dialog.v2" timestamp="1619393799089">
+      <screen x="0" y="25" width="1440" height="820" />
+    </state>
+    <state x="319" y="169" key="Vcs.Push.Dialog.v2/0.25.1440.820@0.25.1440.820" timestamp="1619393799089" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1615659527523">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
