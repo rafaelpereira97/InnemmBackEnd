@@ -3,17 +3,16 @@
 @section('content')
     <div class="login-box">
         <!-- /.login-logo -->
-        <div class="card card-outline card-primary">
-            <div class="card-header text-center">
-                <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+        <div class="card card-outline">
+            <div style="background-image: url('{{url('images/top.png')}}'); background-size: cover; height: 300px; border: none" class="card-header text-center">
             </div>
             <div class="card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
+                <p class="login-box-msg"><b>Faça o seu login</b></p>
 
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="input-group mb-3">
-                        <input id="email" type="email"
+                        <input id="email" type="email" placeholder="Endereço Email"
                                class="form-control @error('email') is-invalid @enderror" name="email"
                                value="{{ old('email') }}" required autocomplete="email" autofocus>
                         @error('email')
@@ -28,7 +27,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input id="password" type="password"
+                        <input id="password" type="password" placeholder="Palavra-Chave"
                                class="form-control @error('password') is-invalid @enderror" name="password"
                                required autocomplete="current-password">
                         @error('password')
@@ -54,7 +53,7 @@
                         </div>
                         <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+                            <button type="submit" class="btn btn-danger btn-block">Entrar</button>
                         </div>
                         <!-- /.col -->
                     </div>

@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a101c2f-0b73-457e-93e0-908a1ac36f0d" name="Default Changelist" comment="">
+    <list default="true" id="6a101c2f-0b73-457e-93e0-908a1ac36f0d" name="Default Changelist" comment="base de dados">
+      <change afterPath="$PROJECT_DIR$/public/images/avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/iconInnemm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/top.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OccurrenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OccurrenceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/occurrences/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/occurrences/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,6 +146,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
@@ -141,6 +154,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
     </key>
@@ -165,7 +181,13 @@
       <workItem from="1616193685887" duration="9000" />
       <workItem from="1617985235412" duration="4083000" />
       <workItem from="1618863801540" duration="31000" />
-      <workItem from="1619393781504" duration="1960000" />
+      <workItem from="1619393781504" duration="5454000" />
+      <workItem from="1619453803900" duration="1469000" />
+      <workItem from="1619465724265" duration="1632000" />
+      <workItem from="1619535787829" duration="612000" />
+      <workItem from="1619567281985" duration="212000" />
+      <workItem from="1619623624418" duration="4014000" />
+      <workItem from="1620499923426" duration="574000" />
     </task>
     <task id="LOCAL-00001" summary="Implementação do backend .">
       <created>1617988094501</created>
@@ -181,7 +203,35 @@
       <option name="project" value="LOCAL" />
       <updated>1619393796825</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="base de dados">
+      <created>1619434120719</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1619434120719</updated>
+    </task>
+    <task id="LOCAL-00004" summary="..">
+      <created>1619447690641</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1619447690641</updated>
+    </task>
+    <task id="LOCAL-00005" summary="..">
+      <created>1619447789757</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1619447789757</updated>
+    </task>
+    <task id="LOCAL-00006" summary="dashboard, index of occurrences">
+      <created>1619466200680</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1619466200680</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,17 +241,21 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Implementação do backend ." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementação do backend ." />
+    <MESSAGE value="base de dados" />
+    <MESSAGE value=".." />
+    <MESSAGE value="dashboard, index of occurrences" />
+    <option name="LAST_COMMIT_MESSAGE" value="dashboard, index of occurrences" />
   </component>
   <component name="WindowStateProjectService">
     <state x="458" y="209" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615661455195">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="209" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1615661455195" />
-    <state x="303" y="25" key="CommitChangelistDialog2" timestamp="1619393796565">
-      <screen x="0" y="25" width="1440" height="820" />
+    <state x="303" y="25" width="831" height="820" key="CommitChangelistDialog2" timestamp="1619466200428">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="303" y="25" key="CommitChangelistDialog2/0.25.1440.820@0.25.1440.820" timestamp="1619393796565" />
+    <state x="303" y="25" width="831" height="820" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1619466200428" />
+    <state x="303" y="25" key="CommitChangelistDialog2/0.25.1440.820@0.25.1440.820" timestamp="1619447789606" />
     <state x="571" y="355" key="Github.ShareDialog" timestamp="1615679061102">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -210,13 +264,15 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="463" y="76" key="Github.UntrackedFilesDialog/0.0.1440.900@0.0.1440.900" timestamp="1615679074014" />
-    <state x="319" y="169" key="Vcs.Push.Dialog.v2" timestamp="1619393799089">
-      <screen x="0" y="25" width="1440" height="820" />
-    </state>
-    <state x="319" y="169" key="Vcs.Push.Dialog.v2/0.25.1440.820@0.25.1440.820" timestamp="1619393799089" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1615659527523">
+    <state x="319" y="158" key="Vcs.Push.Dialog.v2" timestamp="1619466203358">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1615659527523" />
+    <state x="319" y="158" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1619466203358" />
+    <state x="319" y="169" key="Vcs.Push.Dialog.v2/0.25.1440.820@0.25.1440.820" timestamp="1619447791097" />
+    <state x="385" y="204" width="670" height="616" key="search.everywhere.popup" timestamp="1619630483321">
+      <screen x="0" y="25" width="1440" height="820" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1619466625249" />
+    <state x="385" y="204" width="670" height="616" key="search.everywhere.popup/0.25.1440.820@0.25.1440.820" timestamp="1619630483321" />
   </component>
 </project>

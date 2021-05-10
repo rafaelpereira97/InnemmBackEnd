@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Urgency;
 use Illuminate\Http\Request;
 
 class OccurrenceController extends Controller
@@ -13,7 +14,10 @@ class OccurrenceController extends Controller
      */
     public function index()
     {
-        return view('dashboard.occurrences.index');
+        $urgencies = Urgency::all();
+
+        return view('occurrences.index')
+            ->with('urgencies',$urgencies);
     }
 
     /**

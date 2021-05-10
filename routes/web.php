@@ -21,8 +21,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::prefix('dashboard')->group(function(){
-    Route::prefix('occurrences')->group(function(){
-        Route::get('index')->name('occurrence.index');
-    });
+Route::prefix('occurrences')->group(function(){
+    Route::get('/',[\App\Http\Controllers\OccurrenceController::class,'index'])->name('occurrence.index');
 });
