@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Occurrence;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $occurrences = Occurrence::paginate(10);
+
+        return view('home')
+            ->with('occurrences',$occurrences);
+
     }
 }

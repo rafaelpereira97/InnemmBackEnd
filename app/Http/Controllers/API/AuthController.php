@@ -46,4 +46,13 @@ class AuthController extends Controller
             $user->save();
             return response()->json(null,200);
     }
+
+    public function saveLastPosition(Request $request){
+        $user = $request->user();
+        $user->latitude = $request->latitude;
+        $user->longitude = $request->longitude;
+        $user->save();
+        return response()->json(null,200);
+    }
+
 }
