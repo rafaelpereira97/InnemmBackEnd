@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Auth;
 class OccurrenceController extends Controller
 {
     public function getOcurrences(Request $request){
-        $ocurrences = $request->user()->occurrences()->with("urgency")->get();
-        dd($ocurrences);
+        $ocurrences = $request->user()
+            ->occurrences()->with("urgency")
+            ->get();
+        return response()->json($ocurrences);
     }
 }

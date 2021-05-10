@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Occurrence extends Model
 {
     use HasFactory;
+
+    public function urgency(){
+        return $this->belongsTo(Urgency::class);
+    }
 }
