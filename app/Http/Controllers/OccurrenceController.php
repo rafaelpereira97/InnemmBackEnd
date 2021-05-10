@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Group;
 use App\Models\Urgency;
 use Illuminate\Http\Request;
 
@@ -15,9 +16,11 @@ class OccurrenceController extends Controller
     public function index()
     {
         $urgencies = Urgency::all();
+        $groups = Group::all();
 
         return view('occurrences.index')
-            ->with('urgencies',$urgencies);
+            ->with('urgencies',$urgencies)
+            ->with('groups',$groups);
     }
 
     /**

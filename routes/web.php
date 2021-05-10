@@ -23,4 +23,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::prefix('occurrences')->group(function(){
     Route::get('/',[\App\Http\Controllers\OccurrenceController::class,'index'])->name('occurrence.index');
+    Route::post('/store',[\App\Http\Controllers\OccurrenceController::class, 'store'])->name('occurrence.store');
 });

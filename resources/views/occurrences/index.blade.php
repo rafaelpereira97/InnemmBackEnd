@@ -36,8 +36,9 @@
                     <div class="form-group">
                         <label for="group">Grupo de Bombeiros</label>
                         <select required id="group" name="group_id" class="form-control">
-                            <option>Grupo 1</option>
-                            <option>Grupo 2</option>
+                            @foreach($groups as $group)
+                            <option>{{$group->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">
