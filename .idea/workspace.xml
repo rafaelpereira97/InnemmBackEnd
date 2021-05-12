@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a101c2f-0b73-457e-93e0-908a1ac36f0d" name="Default Changelist" comment="Layout Login">
+    <list default="true" id="6a101c2f-0b73-457e-93e0-908a1ac36f0d" name="Default Changelist" comment="marcadores dos bombeiros no mapa">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -182,7 +181,7 @@
       <workItem from="1619623624418" duration="4014000" />
       <workItem from="1620499923426" duration="574000" />
       <workItem from="1620643454025" duration="10385000" />
-      <workItem from="1620833823129" duration="191000" />
+      <workItem from="1620833823129" duration="875000" />
     </task>
     <task id="LOCAL-00001" summary="Implementação do backend .">
       <created>1617988094501</created>
@@ -254,7 +253,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620663651026</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="marcadores dos bombeiros no mapa">
+      <created>1620834117583</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1620834117583</updated>
+    </task>
+    <task id="LOCAL-00012" summary="marcadores dos bombeiros no mapa">
+      <created>1620834510034</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1620834510034</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,18 +283,19 @@
     <MESSAGE value="Layout Login" />
     <MESSAGE value="Get all ocurrences" />
     <MESSAGE value="save last position of fireman" />
-    <option name="LAST_COMMIT_MESSAGE" value="save last position of fireman" />
+    <MESSAGE value="marcadores dos bombeiros no mapa" />
+    <option name="LAST_COMMIT_MESSAGE" value="marcadores dos bombeiros no mapa" />
   </component>
   <component name="WindowStateProjectService">
     <state x="458" y="209" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615661455195">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="209" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1615661455195" />
-    <state x="303" y="25" width="831" height="820" key="CommitChangelistDialog2" timestamp="1620664690317">
+    <state x="303" y="25" width="831" height="820" key="CommitChangelistDialog2" timestamp="1620834514753">
       <screen x="0" y="25" width="1440" height="819" />
     </state>
     <state x="303" y="25" width="831" height="820" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1619466200428" />
-    <state x="303" y="25" key="CommitChangelistDialog2/0.25.1440.819@0.25.1440.819" timestamp="1620664690317" />
+    <state x="303" y="25" key="CommitChangelistDialog2/0.25.1440.819@0.25.1440.819" timestamp="1620834514753" />
     <state x="303" y="25" key="CommitChangelistDialog2/0.25.1440.820@0.25.1440.820" timestamp="1620655772774" />
     <state x="571" y="355" key="Github.ShareDialog" timestamp="1615679061102">
       <screen x="0" y="0" width="1440" height="900" />
@@ -291,11 +305,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="463" y="76" key="Github.UntrackedFilesDialog/0.0.1440.900@0.0.1440.900" timestamp="1615679074014" />
-    <state x="319" y="169" key="Vcs.Push.Dialog.v2" timestamp="1620663652122">
+    <state x="319" y="169" key="Vcs.Push.Dialog.v2" timestamp="1620834521683">
       <screen x="0" y="25" width="1440" height="819" />
     </state>
     <state x="319" y="158" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1619466203358" />
-    <state x="319" y="169" key="Vcs.Push.Dialog.v2/0.25.1440.819@0.25.1440.819" timestamp="1620663652122" />
+    <state x="319" y="169" key="Vcs.Push.Dialog.v2/0.25.1440.819@0.25.1440.819" timestamp="1620834521683" />
     <state x="319" y="169" key="Vcs.Push.Dialog.v2/0.25.1440.820@0.25.1440.820" timestamp="1620654878620" />
     <state x="385" y="204" width="670" height="616" key="search.everywhere.popup" timestamp="1619630483321">
       <screen x="0" y="25" width="1440" height="820" />
