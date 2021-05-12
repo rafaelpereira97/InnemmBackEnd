@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a101c2f-0b73-457e-93e0-908a1ac36f0d" name="Default Changelist" comment="marcadores dos bombeiros no mapa">
+    <list default="true" id="6a101c2f-0b73-457e-93e0-908a1ac36f0d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/InnemmBackEnd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/InnemmBackEnd.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OccurrenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OccurrenceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Occurrence.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Occurrence.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/occurrences/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/occurrences/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +38,6 @@
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/psr/http-client" />
-      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
@@ -129,6 +134,8 @@
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/berkayk/onesignal-laravel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
     </include_path>
   </component>
   <component name="ProjectId" id="1phv6bykaBnsz22YIcn9Io3C3wn" />
@@ -181,7 +188,7 @@
       <workItem from="1619623624418" duration="4014000" />
       <workItem from="1620499923426" duration="574000" />
       <workItem from="1620643454025" duration="10385000" />
-      <workItem from="1620833823129" duration="875000" />
+      <workItem from="1620833823129" duration="3462000" />
     </task>
     <task id="LOCAL-00001" summary="Implementação do backend .">
       <created>1617988094501</created>
@@ -267,7 +274,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620834510034</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="marcadores dos bombeiros no mapa">
+      <created>1620835217884</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1620835217884</updated>
+    </task>
+    <task id="LOCAL-00014" summary="marcadores dos bombeiros no mapa com html no popup">
+      <created>1620835788851</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1620835788851</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,18 +305,19 @@
     <MESSAGE value="Get all ocurrences" />
     <MESSAGE value="save last position of fireman" />
     <MESSAGE value="marcadores dos bombeiros no mapa" />
-    <option name="LAST_COMMIT_MESSAGE" value="marcadores dos bombeiros no mapa" />
+    <MESSAGE value="marcadores dos bombeiros no mapa com html no popup" />
+    <option name="LAST_COMMIT_MESSAGE" value="marcadores dos bombeiros no mapa com html no popup" />
   </component>
   <component name="WindowStateProjectService">
     <state x="458" y="209" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615661455195">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="209" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1615661455195" />
-    <state x="303" y="25" width="831" height="820" key="CommitChangelistDialog2" timestamp="1620834514753">
+    <state x="303" y="25" width="831" height="820" key="CommitChangelistDialog2" timestamp="1620835788621">
       <screen x="0" y="25" width="1440" height="819" />
     </state>
     <state x="303" y="25" width="831" height="820" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1619466200428" />
-    <state x="303" y="25" key="CommitChangelistDialog2/0.25.1440.819@0.25.1440.819" timestamp="1620834514753" />
+    <state x="303" y="25" key="CommitChangelistDialog2/0.25.1440.819@0.25.1440.819" timestamp="1620835788621" />
     <state x="303" y="25" key="CommitChangelistDialog2/0.25.1440.820@0.25.1440.820" timestamp="1620655772774" />
     <state x="571" y="355" key="Github.ShareDialog" timestamp="1615679061102">
       <screen x="0" y="0" width="1440" height="900" />
@@ -305,16 +327,17 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="463" y="76" key="Github.UntrackedFilesDialog/0.0.1440.900@0.0.1440.900" timestamp="1615679074014" />
-    <state x="319" y="169" key="Vcs.Push.Dialog.v2" timestamp="1620834521683">
+    <state x="319" y="169" key="Vcs.Push.Dialog.v2" timestamp="1620835790059">
       <screen x="0" y="25" width="1440" height="819" />
     </state>
     <state x="319" y="158" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1619466203358" />
-    <state x="319" y="169" key="Vcs.Push.Dialog.v2/0.25.1440.819@0.25.1440.819" timestamp="1620834521683" />
+    <state x="319" y="169" key="Vcs.Push.Dialog.v2/0.25.1440.819@0.25.1440.819" timestamp="1620835790059" />
     <state x="319" y="169" key="Vcs.Push.Dialog.v2/0.25.1440.820@0.25.1440.820" timestamp="1620654878620" />
-    <state x="385" y="204" width="670" height="616" key="search.everywhere.popup" timestamp="1619630483321">
-      <screen x="0" y="25" width="1440" height="820" />
+    <state x="385" y="204" width="670" height="616" key="search.everywhere.popup" timestamp="1620837822769">
+      <screen x="0" y="25" width="1440" height="819" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1619466625249" />
+    <state x="385" y="204" width="670" height="616" key="search.everywhere.popup/0.25.1440.819@0.25.1440.819" timestamp="1620837822769" />
     <state x="385" y="204" width="670" height="616" key="search.everywhere.popup/0.25.1440.820@0.25.1440.820" timestamp="1619630483321" />
   </component>
 </project>

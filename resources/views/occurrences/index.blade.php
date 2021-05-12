@@ -31,23 +31,23 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <form action="" method="POST">
+                    <form action="{{route('occurrence.store')}}" method="POST">
                         @csrf
                     <div class="form-group">
                         <label for="group">Grupo de Bombeiros</label>
                         <select required id="group" name="group_id" class="form-control">
                             @foreach($groups as $group)
-                            <option>{{$group->name}}</option>
+                            <option value="{{$group->id}}">{{$group->name}}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Ocorrência</label>
-                        <input required type="text" class="form-control" id="exampleInputEmail1" placeholder="Título da Ocorrência">
+                        <input name="occurrence" required type="text" class="form-control" id="exampleInputEmail1" placeholder="Título da Ocorrência">
                     </div>
                     <div class="form-group">
                         <label for="auto_message">Mensagem automática</label>
-                        <select id="auto_message" name="auto_message" class="form-control">
+                        <select id="auto_message" class="form-control">
                             <option selected>Selecionar mensagem automática ...</option>
                             <option>Alerta 1</option>
                             <option>Alerta 1</option>
@@ -56,13 +56,13 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Descrição da Ocorrência</label>
-                        <textarea required rows="5" class="form-control" id="exampleInputEmail1" placeholder="Faça uma breve descrição da ocorrência, os bombeiros poderão ver esta descrição..."></textarea>
+                        <textarea name="desc_occurrence" required rows="5" class="form-control" id="exampleInputEmail1" placeholder="Faça uma breve descrição da ocorrência, os bombeiros poderão ver esta descrição..."></textarea>
                     </div>
                     <div class="form-group">
                         <label for="urgency">Grau de Urgência</label>
                         <select required id="urgency" name="urgency_id" class="form-control">
                             @foreach($urgencies as $urgency)
-                                <option>{{$urgency->name}}</option>
+                                <option value="{{$urgency->id}}">{{$urgency->name}}</option>
                             @endforeach
                         </select>
                     </div>

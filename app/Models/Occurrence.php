@@ -12,4 +12,8 @@ class Occurrence extends Model
     public function urgency(){
         return $this->belongsTo(Urgency::class);
     }
+
+    public function users(){
+        return $this->belongsToMany(User::class);
+    }
 }
