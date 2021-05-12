@@ -3,56 +3,41 @@
 namespace App\Http\Controllers;
 
 use App\Models\Group;
-use App\Models\Occurrence;
-use App\Models\Urgency;
 use Illuminate\Http\Request;
 
-class OccurrenceController extends Controller
+class GroupController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $urgencies = Urgency::all();
         $groups = Group::all();
-
-        return view('occurrences.index')
-            ->with('urgencies',$urgencies)
+        return view('groups.index')
             ->with('groups',$groups);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $occurrence = new Occurrence();
-        $occurrence->title = $request->occurrence;
-        $occurrence->description = $request->desc_occurrence;
-        $occurrence->urgency_id = $request->urgency_id;
-        $occurrence->save();
-
-        $group = Group::find($request->group_id);
-
-        foreach($group->users as $user){
-            $occurrence->users()->attach($user->id);
-            \OneSignal::sendNotificationToUser(
-                "Tem uma nova Ocorrência por favor verifique na aplicação!",
-                $user->playerID,
-                $url = null,
-                $data = null,
-                $buttons = null,
-                $schedule = null
-            );
-        }
-
-        return redirect(route("home"));
+        //
     }
 
     /**

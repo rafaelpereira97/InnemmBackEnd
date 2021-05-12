@@ -119,12 +119,20 @@
                             <p>Criar Ocorrência</p>
                         </a>
                     </li>
+
                     <li class="nav-item">
-                        <a href="../widgets.html" class="nav-link">
+                        <a href="{{route('group.index')}}" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
                             <p>
-                                Widgets
-                                <span class="right badge badge-danger">New</span>
+                                Grupos
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('status.index')}}" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>
+                                Estados
                             </p>
                         </a>
                     </li>
