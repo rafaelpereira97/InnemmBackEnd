@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Occurrence;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,9 +26,13 @@ class HomeController extends Controller
     public function index()
     {
         $occurrences = Occurrence::paginate(10);
+        $users = User::where('latitude','!=',null)
+                ->where('longitude','!=',null)
+                ->get();
 
         return view('home')
-            ->with('occurrences',$occurrences);
+            ->with('occurrences',$occurrences)
+            ->with('users',$users);
 
     }
 }

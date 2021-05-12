@@ -1,19 +1,7 @@
 @extends('layouts.backend')
 
 @section('content')
-<style>
-    #map {
-        height: 100%;
-    }
 
-    /* Optional: Makes the sample page fill the window. */
-    html,
-    body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-</style>
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -113,7 +101,30 @@
                                  </div>
                              </div>
                              <div class="card-body p-0">
-                                 <div id="map"></div>
+                                 <div id="map" style="width: 100%; height: 600px;"></div>
+                                 <script>
+                                     mapboxgl.accessToken = 'pk.eyJ1IjoicmFmYWVscGVyZWlyYTk3IiwiYSI6ImNrb2l1OWRoMTBvb3gyeHJtMjc5bHQzcjMifQ.a9JVwy1esI237WyBi2uQUQ';
+                                     var map = new mapboxgl.Map({
+                                         container: 'map',
+                                         style: 'mapbox://styles/mapbox/streets-v11',
+                                         zoom: 3 // starting zoom
+                                     });
+                                     map.addControl(
+                                         new mapboxgl.GeolocateControl({
+                                             positionOptions: {
+                                                 enableHighAccuracy: true
+                                             },
+                                             trackUserLocation: true
+                                         })
+                                     );
+                                     @foreach($users as $user)
+
+                                     var marker1 = new mapboxgl.Marker()
+                                         .setLngLat([{!! $user->longitude !!},{!! $user->latitude !!}])
+                                         .addTo(map);
+
+                                     @endforeach
+                                 </script>
                              </div>
                          </div>
                     </div>
@@ -185,55 +196,5 @@
         <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
 
 @endsection
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCW5qTy5XPJMuh-SfXf1I6Xdv21cJrO_LY&callback=initMap&libraries=&v=weekly"
-    async
-></script>
-<script>
-    let map;
-
-    function initMap() {
-        map = new google.maps.Map(document.getElementById("map"), {
-            center: { lat: -34.397, lng: 150.644 },
-            zoom: 6,
-        });
-        infoWindow = new google.maps.InfoWindow();
-        const locationButton = document.createElement("button");
-        locationButton.textContent = "Pan to Current Location";
-        locationButton.classList.add("custom-map-control-button");
-        map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
-        locationButton.addEventListener("click", () => {
-            // Try HTML5 geolocation.
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                        const pos = {
-                            lat: position.coords.latitude,
-                            lng: position.coords.longitude,
-                        };
-                        infoWindow.setPosition(pos);
-                        infoWindow.setContent("Location found.");
-                        infoWindow.open(map);
-                        map.setCenter(pos);
-                    },
-                    () => {
-                        handleLocationError(true, infoWindow, map.getCenter());
-                    }
-                );
-            } else {
-                // Browser doesn't support Geolocation
-                handleLocationError(false, infoWindow, map.getCenter());
-            }
-        });
-    }
-
-    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(
-            browserHasGeolocation
-                ? "Error: The Geolocation service failed."
-                : "Error: Your browser doesn't support geolocation."
-        );
-        infoWindow.open(map);
-    }
-</script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
