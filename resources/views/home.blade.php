@@ -148,16 +148,14 @@
                                 <table class="table m-0">
                                     <thead>
                                     <tr>
-                                        <th>Order ID</th>
-                                        <th>Item</th>
-                                        <th>Status</th>
-                                        <th>Popularity</th>
+                                        <th>Ocorrência</th>
+                                        <th>Urgência</th>
+                                        <th>Descrição</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     @foreach($occurrences as $occurrence)
                                     <tr>
-                                        <td><a href="pages/examples/invoice.html">OR9842</a></td>
                                         <td>{{$occurrence->title}}</td>
                                         @if($occurrence->urgency_id == 1)
                                             <td><span class="badge badge-danger">{{$occurrence->urgency->name}}</span></td>
@@ -167,7 +165,7 @@
                                             <td><span class="badge badge-success">{{$occurrence->urgency->name}}</span></td>
                                         @endif
                                         <td>
-                                            <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                                            <div class="sparkbar" data-color="#00a65a" data-height="20">{{$occurrence->description}}</div>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -179,10 +177,7 @@
                         </div>
 
                         <!-- /.card-body -->
-                        <div class="card-footer clearfix">
-                            <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
-                            <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
-                        </div>
+
                         <!-- /.card-footer -->
                     </div>
                     </div>
