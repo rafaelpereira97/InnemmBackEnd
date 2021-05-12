@@ -121,6 +121,8 @@
 
                                      var marker1 = new mapboxgl.Marker()
                                          .setLngLat([{!! $user->longitude !!},{!! $user->latitude !!}])
+                                         .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                                             .setHTML("<img width='20px' src='http://127.0.0.1:8000/images/avatar.png'><br><h6>Bombeiro {!! $user->name !!}</h6>"))
                                          .addTo(map);
 
                                      @endforeach
