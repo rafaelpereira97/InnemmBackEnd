@@ -14,7 +14,6 @@ class OccurrenceController extends Controller
         $ocurrences = $request->user()
             ->occurrences()->with("urgency")
             ->get();
-        dd($ocurrences);
         return response()->json($ocurrences);
     }
 
