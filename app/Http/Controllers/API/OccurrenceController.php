@@ -18,11 +18,19 @@ class OccurrenceController extends Controller
     }
 
     public function occurrenceOpened(Request $request){
-        $occurrenceUser = OccurrenceUser::where('occurrence_id',$request->occurrence_id)->where('user_id',$request->user()->id)->first();
-        $occurrenceUser->opened = 1;
-        $occurrenceUser->save();
+        try{
+            $occurrenceUser = OccurrenceUser::where('occurrence_id',$request->occurrence_id)
+                ->where('user_id',$request->user()->id)
+                ->first();
 
-        return response()->json(['status'=>'success'],200);
+            $occurrenceUser->opened = 1;
+            $occurrenceUser->save();
+
+            return response()->json(null,200);
+        }catch (\Exception $exception){
+            return response()->json($exception->getMessage(),500);
+        }
+
     }
 
 }
