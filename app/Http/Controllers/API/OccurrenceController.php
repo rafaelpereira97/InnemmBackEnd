@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Occurrence;
+use App\Models\OccurrenceUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,4 +16,13 @@ class OccurrenceController extends Controller
             ->get();
         return response()->json($ocurrences);
     }
+
+    public function occurrenceOpened(Request $request){
+        $occurrenceUser = OccurrenceUser::where('occurrence_id',$request->occurrence_id)->where('user_id',$request->user()->id)->first();
+        $occurrenceUser->opened = 1;
+        $occurrenceUser->save();
+
+        return response()->json(['status'=>'success'],200);
+    }
+
 }
