@@ -35,4 +35,42 @@ class OccurrenceController extends Controller
 
     }
 
+    public function acceptOccurrence(Request $request){
+
+        try{
+            $occurrenceUser = OccurrenceUser::where('occurrence_id',$request->occurrence_id)
+                ->where('user_id',$request->user()->id)
+                ->first();
+
+            //ACCEPTED
+            $occurrenceUser->status = 1;
+            $occurrenceUser->save();
+
+            return response()->json(null,200);
+
+        }catch (\Exception $exception){
+            return response()->json($exception->getMessage(),500);
+        }
+
+    }
+
+    public function rejectOccurrence(Request $request){
+
+        try{
+            $occurrenceUser = OccurrenceUser::where('occurrence_id',$request->occurrence_id)
+                ->where('user_id',$request->user()->id)
+                ->first();
+
+            //REJECTED
+            $occurrenceUser->status = 2;
+            $occurrenceUser->save();
+
+            return response()->json(null,200);
+
+        }catch (\Exception $exception){
+            return response()->json($exception->getMessage(),500);
+        }
+
+    }
+
 }
