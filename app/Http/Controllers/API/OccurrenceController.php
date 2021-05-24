@@ -12,7 +12,7 @@ class OccurrenceController extends Controller
 {
     public function getOcurrences(Request $request){
         $ocurrences = $request->user()
-            ->occurrences()->with("urgency")
+            ->occurrences()->where('status','!=',2)->with("urgency")
             ->get();
         return response()->json($ocurrences);
     }
