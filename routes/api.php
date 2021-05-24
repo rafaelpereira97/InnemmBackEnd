@@ -25,5 +25,6 @@ Route::post('getOccurrences',[\App\Http\Controllers\API\OccurrenceController::cl
 Route::post('saveLastPosition',[\App\Http\Controllers\API\AuthController::class,'saveLastPosition'])->middleware('auth:api');
 Route::post('occurrenceOpened',[\App\Http\Controllers\API\OccurrenceController::class,'occurrenceOpened'])->middleware('auth:api');
 
+//ACCEPT AND REJECT OCCURRENCES
 Route::post('acceptOccurrence',[\App\Http\Controllers\API\OccurrenceController::class,'acceptOccurrence'])->middleware('auth:api');
 Route::post('rejectOccurrence',[\App\Http\Controllers\API\OccurrenceController::class,'rejectOccurrence'])->middleware('auth:api');

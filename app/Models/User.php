@@ -48,6 +48,6 @@ class User extends Authenticatable
     }
 
     public function occurrences(){
-        return $this->belongsToMany(Occurrence::class)->withPivot('opened');
+        return $this->belongsToMany(Occurrence::class)->withPivot('opened','status');
     }
 }
