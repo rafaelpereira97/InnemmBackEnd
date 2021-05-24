@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class OccurrenceUser extends Model
 {
     use HasFactory;
+
+    protected $table = 'occurrence_user';
+
 }
