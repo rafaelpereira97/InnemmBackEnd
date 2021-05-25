@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Group;
+use App\Models\Message;
 use App\Models\Occurrence;
 use App\Models\Urgency;
 use Illuminate\Http\Request;
@@ -18,10 +19,12 @@ class OccurrenceController extends Controller
     {
         $urgencies = Urgency::all();
         $groups = Group::all();
+        $messages = Message::all();
 
         return view('occurrences.index')
             ->with('urgencies',$urgencies)
-            ->with('groups',$groups);
+            ->with('groups',$groups)
+            ->with('messages',$messages);
     }
 
     /**
@@ -53,6 +56,11 @@ class OccurrenceController extends Controller
         }
 
         return redirect(route("home"));
+    }
+
+    public function getAutoMessages(Group $group){
+        $messages = $group->messages;
+        return response()->json($messages);
     }
 
     /**

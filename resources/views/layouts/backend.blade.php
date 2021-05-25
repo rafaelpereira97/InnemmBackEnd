@@ -136,6 +136,14 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{route('message.index')}}" class="nav-link">
+                            <i class="nav-icon fas fa-envelope"></i>
+                            <p>
+                                Mensagens Automáticas
+                            </p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -169,3 +177,31 @@
 <script src="{{asset('dist/js/demo.js')}}"></script>
 </body>
 </html>
+
+
+<script>
+    $("#group").on('change',function (e){
+        var group_id = e.target.value;
+        $('#auto_message').empty();
+        $('#auto_message').hide();
+        $('.spinner-border').show();
+
+        $('#auto_message').append(`<option disabled selected>
+                                       ${'Selecionar mensagem automática ...'}
+                                  </option>`);
+        $.get( '{{route('occurence.getAutoMessages')}}/'+group_id, function( data ) {
+            $('#auto_message').show();
+            $('.spinner-border').hide();
+            $(data).each( function( index, message ){
+                $('#auto_message').append(`<option value="${message.message}">
+                                       ${message.message}
+                                  </option>`);
+            });
+        });
+    });
+
+
+    $("#auto_message").on('change',function (e){
+        $("#desc_occurrence").val($(this).val())
+    })
+</script>

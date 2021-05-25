@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $occurrences = Occurrence::paginate(10);
+        $occurrences = Occurrence::all();
         $users = User::where('latitude','!=',null)
                 ->where('longitude','!=',null)
                 ->get();

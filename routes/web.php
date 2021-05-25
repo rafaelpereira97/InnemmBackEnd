@@ -24,6 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('occurrences')->group(function(){
     Route::get('/',[\App\Http\Controllers\OccurrenceController::class,'index'])->name('occurrence.index');
     Route::post('/store',[\App\Http\Controllers\OccurrenceController::class, 'store'])->name('occurrence.store');
+    Route::get('/getAutoMessages/{group?}',[\App\Http\Controllers\OccurrenceController::class, 'getAutoMessages'])->name('occurence.getAutoMessages');
 });
 
 Route::prefix('groups')->group(function(){
@@ -34,4 +35,9 @@ Route::prefix('groups')->group(function(){
 Route::prefix('status')->group(function(){
     Route::get('/',[\App\Http\Controllers\StatusController::class,'index'])->name('status.index');
     Route::post('/store',[\App\Http\Controllers\StatusController::class, 'store'])->name('status.store');
+});
+
+Route::prefix('messages')->group(function(){
+    Route::get('/',[\App\Http\Controllers\MessageController::class,'index'])->name('message.index');
+    Route::post('/store',[\App\Http\Controllers\MessageController::class, 'store'])->name('message.store');
 });

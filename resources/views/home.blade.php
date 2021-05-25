@@ -117,13 +117,27 @@
                                              trackUserLocation: true
                                          })
                                      );
+                                     map.addControl(new mapboxgl.FullscreenControl());
+
                                      @foreach($users as $user)
 
-                                     var marker1 = new mapboxgl.Marker()
-                                         .setLngLat([{!! $user->longitude !!},{!! $user->latitude !!}])
-                                         .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                                             .setHTML("<img width='20px' src='http://127.0.0.1:8000/images/avatar.png'><br><h6>Bombeiro {!! $user->name !!}</h6>"))
-                                         .addTo(map);
+                                         new mapboxgl.Marker()
+                                             .setLngLat([{!! $user->longitude !!},{!! $user->latitude !!}])
+                                             .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                                                 .setHTML("<img width='20px' src='http://127.0.0.1:8000/images/avatar.png'><br><h6>Bombeiro {!! $user->name !!}</h6>"))
+                                             .addTo(map);
+
+                                     @endforeach
+
+                                     @foreach($occurrences as $occurrence)
+
+                                         @if($occurrence->latitude && $occurrence->longitude != null)
+                                             new mapboxgl.Marker()
+                                                 .setLngLat([{!! $occurrence->longitude !!},{!! $occurrence->latitude !!}])
+                                                 .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                                                     .setHTML("<img width='20px' src='http://127.0.0.1:8000/images/avatar.png'><br><h6>Ocorrência {!! $occurrence->name !!}</h6>"))
+                                                 .addTo(map);
+                                         @endif
 
                                      @endforeach
                                  </script>
@@ -173,7 +187,6 @@
                                     @endforeach
                                     </tbody>
                                 </table>
-                                {{ $occurrences->links() }}
                             </div>
                             <!-- /.table-responsive -->
                         </div>

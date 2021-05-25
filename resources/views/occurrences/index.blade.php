@@ -36,6 +36,7 @@
                     <div class="form-group">
                         <label for="group">Grupo de Bombeiros</label>
                         <select required id="group" name="group_id" class="form-control">
+                            <option disabled selected>Selecionar Grupo ...</option>
                             @foreach($groups as $group)
                             <option value="{{$group->id}}">{{$group->name}}</option>
                             @endforeach
@@ -48,15 +49,16 @@
                     <div class="form-group">
                         <label for="auto_message">Mensagem automática</label>
                         <select id="auto_message" class="form-control">
-                            <option selected>Selecionar mensagem automática ...</option>
-                            <option>Alerta 1</option>
-                            <option>Alerta 1</option>
-                            <option>Alerta 1</option>
+                            <option disabled selected>Selecionar mensagem automática ...</option>
                         </select>
+                        <br>
+                        <div class="spinner-border" style="display: none;" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Descrição da Ocorrência</label>
-                        <textarea name="desc_occurrence" required rows="5" class="form-control" id="exampleInputEmail1" placeholder="Faça uma breve descrição da ocorrência, os bombeiros poderão ver esta descrição..."></textarea>
+                        <textarea name="desc_occurrence" required rows="5" class="form-control" id="desc_occurrence" placeholder="Faça uma breve descrição da ocorrência, os bombeiros poderão ver esta descrição..."></textarea>
                     </div>
                     <div class="form-group">
                         <label for="urgency">Grau de Urgência</label>
@@ -78,3 +80,5 @@
     </div>
     <!-- /.content-wrapper -->
 @endsection
+
+
