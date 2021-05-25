@@ -35,10 +35,17 @@ class OccurrenceController extends Controller
      */
     public function store(Request $request)
     {
+
+        $coords = explode(",", $request->coordinates);
+        $latitude = $coords[0];
+        $longitude = $coords[1];
+
         $occurrence = new Occurrence();
         $occurrence->title = $request->occurrence;
         $occurrence->description = $request->desc_occurrence;
         $occurrence->urgency_id = $request->urgency_id;
+        $occurrence->latitude = $latitude;
+        $occurrence->longitude = $longitude;
         $occurrence->save();
 
         $group = Group::find($request->group_id);

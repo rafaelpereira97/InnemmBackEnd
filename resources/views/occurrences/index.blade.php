@@ -68,6 +68,40 @@
                             @endforeach
                         </select>
                     </div>
+                        <div class="form-group">
+                            <label for="urgency">Local da Ocorrência</label>
+                            <input name="coordinates" required type="text" class="form-control" id="coordinates" placeholder="Coordenadas da Ocorrência">
+                        </div>
+                    <div style="height: 300px">
+                        <div id="map" style="width: 60%; height: 300px;"></div>
+                        <script>
+                            mapboxgl.accessToken = 'pk.eyJ1IjoicmFmYWVscGVyZWlyYTk3IiwiYSI6ImNrb2l1OWRoMTBvb3gyeHJtMjc5bHQzcjMifQ.a9JVwy1esI237WyBi2uQUQ';
+                            var map = new mapboxgl.Map({
+                                container: 'map',
+                                style: 'mapbox://styles/mapbox/streets-v11',
+                                zoom: 3 // starting zoom
+                            });
+                            map.on('style.load', function() {
+                                map.on('click', function(e) {
+                                    var coordinates = e.lngLat;
+                                    $("#coordinates").val(coordinates.lat+","+coordinates.lng)
+                                    new mapboxgl.Popup()
+                                        .setLngLat(coordinates)
+                                        .setHTML('<b>LOCAL DA OCORRÊNCIA</b>')
+                                        .addTo(map);
+                                });
+                            });
+                            map.addControl(
+                                new mapboxgl.GeolocateControl({
+                                    positionOptions: {
+                                        enableHighAccuracy: true
+                                    },
+                                    trackUserLocation: true
+                                })
+                            );
+                        </script>
+                    </div>
+                        <br>
                     <button type="submit" class="btn btn-primary">Criar Ocorrência</button>
                     </form>
                 </div>
@@ -80,5 +114,5 @@
     </div>
     <!-- /.content-wrapper -->
 @endsection
-
-
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>

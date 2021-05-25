@@ -25,6 +25,19 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $activeOccurrences = Occurrence::join('occurrence_user', 'occurrence_user.occurrence_id', '=', 'occurrences.id')
+            ->where('occurrence_user.status',1)
+            ->count();
+
+        $doneOccurrences = Occurrence::join('occurrence_user', 'occurrence_user.occurrence_id', '=', 'occurrences.id')
+            ->where('occurrence_user.status',2)
+            ->count();
+
+        $adminsCount = User::where('admin',1)->count();
+
+        $bombeirosCount = User::where('admin',0)->count();
+
+
         $occurrences = Occurrence::all();
         $users = User::where('latitude','!=',null)
                 ->where('longitude','!=',null)
@@ -32,7 +45,11 @@ class HomeController extends Controller
 
         return view('home')
             ->with('occurrences',$occurrences)
-            ->with('users',$users);
+            ->with('users',$users)
+            ->with('activeOccurrences',$activeOccurrences)
+            ->with('doneOccurrences',$doneOccurrences)
+            ->with('adminsCount',$adminsCount)
+            ->with('bombeirosCount',$bombeirosCount);
 
     }
 }

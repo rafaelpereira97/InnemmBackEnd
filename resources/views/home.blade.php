@@ -31,7 +31,7 @@
                             <div class="info-box-content">
                                 <span class="info-box-text">Administradores</span>
                                 <span class="info-box-number">
-                  1
+                  {{$adminsCount}}
                   <small></small>
                 </span>
                             </div>
@@ -46,7 +46,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Ocorrências a Decorrer</span>
-                                <span class="info-box-number">41,410</span>
+                                <span class="info-box-number">{{$activeOccurrences}}</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -63,7 +63,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Ocorrências Terminadas</span>
-                                <span class="info-box-number">760</span>
+                                <span class="info-box-number">{{$doneOccurrences}}</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -76,7 +76,7 @@
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Bombeiros</span>
-                                <span class="info-box-number">2,000</span>
+                                <span class="info-box-number">{{$bombeirosCount}}</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -135,7 +135,7 @@
                                              new mapboxgl.Marker()
                                                  .setLngLat([{!! $occurrence->longitude !!},{!! $occurrence->latitude !!}])
                                                  .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                                                     .setHTML("<img width='20px' src='http://127.0.0.1:8000/images/avatar.png'><br><h6>Ocorrência {!! $occurrence->name !!}</h6>"))
+                                                     .setHTML("<img width='20px' src='http://127.0.0.1:8000/images/avatar.png'><br><h6>Ocorrência - {!! $occurrence->title !!}</h6>"))
                                                  .addTo(map);
                                          @endif
 
