@@ -48,7 +48,7 @@
                     </div>
                     <div class="form-group">
                         <label for="auto_message">Mensagem automática</label>
-                        <select id="auto_message" class="form-control">
+                        <select style="text-overflow: ellipsis;white-space: nowrap;overflow: hidden;" id="auto_message" class="form-control">
                             <option disabled selected>Selecionar mensagem automática ...</option>
                         </select>
                         <br>

@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a101c2f-0b73-457e-93e0-908a1ac36f0d" name="Default Changelist" comment="">
+    <list default="true" id="6a101c2f-0b73-457e-93e0-908a1ac36f0d" name="Default Changelist" comment="Listagem de grupos e estados de emergencia">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/OccurrenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/OccurrenceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/occurrences/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/occurrences/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +186,13 @@
       <workItem from="1619623624418" duration="4014000" />
       <workItem from="1620499923426" duration="574000" />
       <workItem from="1620643454025" duration="10385000" />
-      <workItem from="1620833823129" duration="3983000" />
+      <workItem from="1620833823129" duration="5847000" />
+      <workItem from="1621432077809" duration="14000" />
+      <workItem from="1621858361093" duration="15387000" />
+      <workItem from="1622122943143" duration="191000" />
+      <workItem from="1622126674915" duration="39000" />
+      <workItem from="1622196978536" duration="850000" />
+      <workItem from="1623066186574" duration="2358000" />
     </task>
     <task id="LOCAL-00001" summary="Implementação do backend .">
       <created>1617988094501</created>
@@ -289,7 +299,112 @@
       <option name="project" value="LOCAL" />
       <updated>1620837949262</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="icons do dashboard">
+      <created>1620838419048</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1620838419048</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Listagem de grupos e estados de emergencia">
+      <created>1620839547898</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1620839547898</updated>
+    </task>
+    <task id="LOCAL-00018" summary="API opened occurrence">
+      <created>1621867846731</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1621867846731</updated>
+    </task>
+    <task id="LOCAL-00019" summary="set opened occurrence">
+      <created>1621868140463</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1621868140463</updated>
+    </task>
+    <task id="LOCAL-00020" summary="pivot">
+      <created>1621868406585</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1621868406586</updated>
+    </task>
+    <task id="LOCAL-00021" summary="pivot">
+      <created>1621868464716</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1621868464716</updated>
+    </task>
+    <task id="LOCAL-00022" summary="teste">
+      <created>1621868618177</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1621868618177</updated>
+    </task>
+    <task id="LOCAL-00023" summary="teste">
+      <created>1621868670320</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1621868670320</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Listagem de grupos e estados de emergencia">
+      <created>1621869362995</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1621869362995</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Accept and reject occurrence API methods">
+      <created>1621871780985</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1621871780985</updated>
+    </task>
+    <task id="LOCAL-00026" summary="with pivot">
+      <created>1621871839119</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1621871839119</updated>
+    </task>
+    <task id="LOCAL-00027" summary="query filter">
+      <created>1621872269216</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1621872269216</updated>
+    </task>
+    <task id="LOCAL-00028" summary="mensagens automaticas">
+      <created>1621957431443</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1621957431443</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Dashboard e Inserir Ocorrencia com mensagens automaticas e picker de posicao">
+      <created>1621961011869</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1621961011869</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Fix do admin lte">
+      <created>1621986793596</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1621986793596</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,18 +423,32 @@
     <MESSAGE value="marcadores dos bombeiros no mapa" />
     <MESSAGE value="marcadores dos bombeiros no mapa com html no popup" />
     <MESSAGE value="envio de notificaçoes ao criar ocorrencia" />
-    <option name="LAST_COMMIT_MESSAGE" value="envio de notificaçoes ao criar ocorrencia" />
+    <MESSAGE value="icons do dashboard" />
+    <MESSAGE value="API opened occurrence" />
+    <MESSAGE value="set opened occurrence" />
+    <MESSAGE value="pivot" />
+    <MESSAGE value="teste" />
+    <MESSAGE value="Listagem de grupos e estados de emergencia" />
+    <MESSAGE value="Accept and reject occurrence API methods" />
+    <MESSAGE value="with pivot" />
+    <MESSAGE value="query filter" />
+    <MESSAGE value="mensagens automaticas" />
+    <MESSAGE value="Dashboard e Inserir Ocorrencia com mensagens automaticas e picker de posicao" />
+    <MESSAGE value="Fix do admin lte" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix do admin lte" />
   </component>
   <component name="WindowStateProjectService">
     <state x="458" y="209" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615661455195">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="209" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1615661455195" />
-    <state x="303" y="25" width="831" height="820" key="CommitChangelistDialog2" timestamp="1620837949050">
-      <screen x="0" y="25" width="1440" height="819" />
+    <state x="354" y="25" width="831" height="818" key="CommitChangelistDialog2" timestamp="1621986793316">
+      <screen x="0" y="25" width="1440" height="817" />
     </state>
     <state x="303" y="25" width="831" height="820" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1619466200428" />
-    <state x="303" y="25" key="CommitChangelistDialog2/0.25.1440.819@0.25.1440.819" timestamp="1620837949050" />
+    <state x="354" y="25" key="CommitChangelistDialog2/0.25.1440.817@0.25.1440.817" timestamp="1621986793316" />
+    <state x="354" y="25" width="831" height="818" key="CommitChangelistDialog2/0.25.1440.818@0.25.1440.818" timestamp="1621872268928" />
+    <state x="303" y="25" key="CommitChangelistDialog2/0.25.1440.819@0.25.1440.819" timestamp="1620839547597" />
     <state x="303" y="25" key="CommitChangelistDialog2/0.25.1440.820@0.25.1440.820" timestamp="1620655772774" />
     <state x="571" y="355" key="Github.ShareDialog" timestamp="1615679061102">
       <screen x="0" y="0" width="1440" height="900" />
@@ -329,16 +458,20 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="463" y="76" key="Github.UntrackedFilesDialog/0.0.1440.900@0.0.1440.900" timestamp="1615679074014" />
-    <state x="319" y="169" key="Vcs.Push.Dialog.v2" timestamp="1620837951641">
-      <screen x="0" y="25" width="1440" height="819" />
+    <state x="319" y="169" key="Vcs.Push.Dialog.v2" timestamp="1621986794726">
+      <screen x="0" y="25" width="1440" height="817" />
     </state>
     <state x="319" y="158" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1619466203358" />
-    <state x="319" y="169" key="Vcs.Push.Dialog.v2/0.25.1440.819@0.25.1440.819" timestamp="1620837951641" />
+    <state x="319" y="169" key="Vcs.Push.Dialog.v2/0.25.1440.817@0.25.1440.817" timestamp="1621986794726" />
+    <state x="319" y="169" key="Vcs.Push.Dialog.v2/0.25.1440.818@0.25.1440.818" timestamp="1621872270282" />
+    <state x="319" y="169" key="Vcs.Push.Dialog.v2/0.25.1440.819@0.25.1440.819" timestamp="1620839549819" />
     <state x="319" y="169" key="Vcs.Push.Dialog.v2/0.25.1440.820@0.25.1440.820" timestamp="1620654878620" />
-    <state x="385" y="204" width="670" height="616" key="search.everywhere.popup" timestamp="1620837822769">
-      <screen x="0" y="25" width="1440" height="819" />
+    <state x="385" y="204" width="670" height="616" key="search.everywhere.popup" timestamp="1621986525304">
+      <screen x="0" y="25" width="1440" height="817" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1619466625249" />
+    <state x="385" y="204" width="670" height="616" key="search.everywhere.popup/0.25.1440.817@0.25.1440.817" timestamp="1621986525304" />
+    <state x="385" y="204" width="670" height="616" key="search.everywhere.popup/0.25.1440.818@0.25.1440.818" timestamp="1621867925581" />
     <state x="385" y="204" width="670" height="616" key="search.everywhere.popup/0.25.1440.819@0.25.1440.819" timestamp="1620837822769" />
     <state x="385" y="204" width="670" height="616" key="search.everywhere.popup/0.25.1440.820@0.25.1440.820" timestamp="1619630483321" />
   </component>
