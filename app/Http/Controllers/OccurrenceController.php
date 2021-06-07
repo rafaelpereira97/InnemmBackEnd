@@ -59,7 +59,7 @@ class OccurrenceController extends Controller
                 $data = null,
                 $buttons = null,
                 $schedule = null
-            );
+            )->setParam('priority', 10);
         }
 
         return redirect(route("home"));
