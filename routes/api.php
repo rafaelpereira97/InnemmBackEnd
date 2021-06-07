@@ -24,7 +24,7 @@ Route::post('attachPlayerIDtoLoggedUser', [\App\Http\Controllers\API\AuthControl
 Route::post('getOccurrences',[\App\Http\Controllers\API\OccurrenceController::class, 'getOcurrences'])->middleware('auth:api');
 Route::post('saveLastPosition',[\App\Http\Controllers\API\AuthController::class,'saveLastPosition'])->middleware('auth:api');
 Route::post('occurrenceOpened',[\App\Http\Controllers\API\OccurrenceController::class,'occurrenceOpened'])->middleware('auth:api');
-Route::post('updateOccurrenceUserLocation',[\App\Http\Controllers\OccurrenceController::class,'updateOccurrenceUserLocation'])->middleware('auth:api');
+Route::post('updateOccurrenceUserLocation',[\App\Http\Controllers\API\OccurrenceController::class,'updateOccurrenceUserLocation'])->middleware('auth:api');
 
 
 //ACCEPT AND REJECT OCCURRENCES
