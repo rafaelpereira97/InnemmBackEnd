@@ -97,7 +97,7 @@ class OccurrenceController extends Controller
         $distance = $this->distance($corporationDetails->lat, $corporationDetails->long, $latitude, $longitude, "K");
 
         if($distance < 0.5){
-            return response()->json(['result' => 'success', 'inRange' => true, 'debug' => $distance],200);
+            return response()->json(['result' => 'success', 'inRange' => false, 'debug' => $distance],200);
         }else{
             return response()->json(['result' => 'success', 'inRange' => false, 'debug' => $distance],200);
         }
