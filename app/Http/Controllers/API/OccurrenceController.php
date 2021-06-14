@@ -105,7 +105,8 @@ class OccurrenceController extends Controller
     }
 
     public function getUserInfo(Request $request){
-        $user = $request->user()->with('groups')->first();
+        $user = $request->user();
+        dd($user);
         return response()->json($user,200);
     }
 
