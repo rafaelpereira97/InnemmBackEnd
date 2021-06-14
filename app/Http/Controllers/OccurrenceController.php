@@ -52,14 +52,16 @@ class OccurrenceController extends Controller
 
         foreach($group->users as $user){
             $occurrence->users()->attach($user->id);
-            \OneSignal::sendNotificationToUser(
-                "Tem uma nova Ocorrência por favor verifique na aplicação!",
-                $user->playerID,
-                $url = null,
-                $data = null,
-                $buttons = null,
-                $schedule = null
-            );
+            if($user->playerID != null){
+                \OneSignal::sendNotificationToUser(
+                    "Tem uma nova Ocorrência por favor verifique na aplicação!",
+                    $user->playerID,
+                    $url = null,
+                    $data = null,
+                    $buttons = null,
+                    $schedule = null
+                );
+            }
         }
 
         return redirect(route("home"));
