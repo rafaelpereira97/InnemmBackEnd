@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Corporationdetail;
 use App\Models\Occurrence;
 use App\Models\OccurrenceUser;
+use App\Models\User;
 use App\Models\Userlocation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -105,8 +106,7 @@ class OccurrenceController extends Controller
     }
 
     public function getUserInfo(Request $request){
-        $user = $request->user();
-        dd($user);
+        $user = User::with('groups')->find($request->user()->id);
         return response()->json($user,200);
     }
 
