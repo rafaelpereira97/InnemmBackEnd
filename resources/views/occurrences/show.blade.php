@@ -60,14 +60,16 @@
                                 map.addControl(new mapboxgl.FullscreenControl());
 
                                 @foreach($users as $user)
+                                        @if(count($user->getLocationsByOccurrence($occurrence)) > 0)
+                                        var positions = {!! json_encode($user->getLocationsByOccurrence($occurrence)) !!};
 
-                                        var positions = {!! json_encode($user->getLocationsByOccurrence($occurrence)) !!}
                                         var formmatedPositions = [];
-                                        for (i = 0; i < positions.length; i++) {
-                                            formmatedPositions.push([parseFloat(positions[i].long),parseFloat(positions[i].lat)])
 
-                                        }
+                                            for (i = 0; i < positions.length; i++) {
+                                                formmatedPositions.push([parseFloat(positions[i].long),parseFloat(positions[i].lat)])
+                                            }
 
+                                console.log(formmatedPositions)
 
                                 var linestring = turf.lineString(positions);
 
@@ -99,12 +101,12 @@
                                 });
 
 
-
+                                @endif
 
                                 new mapboxgl.Marker()
                                     .setLngLat([{!! $user->longitude !!},{!! $user->latitude !!}])
                                     .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                                        .setHTML("<img width='20px' src='http://127.0.0.1:8000/images/avatar.png'><br><h6>Bombeiro - {!! $user->Name !!}</h6>"))
+                                        .setHTML("<img width='20px' src='http://127.0.0.1:8000/images/avatar.png'><br><h6>Bombeiro - {!! $user->name !!}</h6>"))
                                     .addTo(map);
 
                                 @endforeach
