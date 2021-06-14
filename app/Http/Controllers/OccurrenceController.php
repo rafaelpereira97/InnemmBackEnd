@@ -6,6 +6,7 @@ use App\Models\Group;
 use App\Models\Message;
 use App\Models\Occurrence;
 use App\Models\Urgency;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class OccurrenceController extends Controller
@@ -80,6 +81,20 @@ class OccurrenceController extends Controller
             ->with('users',$users)
             ->with('occurrence',$occurrence);
     }
+
+
+    public function getUserLocations(User $user, Occurrence $occurrence){
+        $positions = $user->getLocationsByOccurrence($occurrence);
+        $positionsJson = array();
+
+        foreach($positions as $position){
+            array_push($positionsJson,[(float)$position->long,(float)$position->lat]);
+        }
+
+        return response()->json($positionsJson,200);
+    }
+
+
 
     /**
      * Show the form for editing the specified resource.

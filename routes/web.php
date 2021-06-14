@@ -30,6 +30,7 @@ Route::prefix('occurrences')->group(function(){
     Route::post('/store',[OccurrenceController::class, 'store'])->name('occurrence.store');
     Route::get('/getAutoMessages/{group?}',[OccurrenceController::class, 'getAutoMessages'])->name('occurence.getAutoMessages');
     Route::get('/show/{occurrence}',[OccurrenceController::class, 'show'])->name('occurrence.show');
+    Route::get('/getUserLocations/{user?}/{occurrence?}', [OccurrenceController::class, 'getUserLocations'])->name('occurrence.getUserLocations');
 });
 
 Route::prefix('groups')->group(function(){

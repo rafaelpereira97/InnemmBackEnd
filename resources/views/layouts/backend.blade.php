@@ -213,4 +213,50 @@
     $("#auto_message").on('change',function (e){
         $("#desc_occurrence").val($(this).val())
     })
+
+
+
+    $(".linhaBombeiro").on('click',function (e){
+
+        const bombeiro_id = $(this).attr("data-bombeiroID");
+        const ocorrencia_id = $(this).attr("data-ocorrenciaID");
+
+        $.get( "{{route('occurrence.getUserLocations')}}"+'/'+bombeiro_id+'/'+ocorrencia_id, function( data ) {
+
+            if(map.getLayer('route')){
+                map.removeLayer('route')
+            }
+
+            if(map.getSource('route')){
+                map.removeSource('route')
+            }
+
+
+            map.addSource('route', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'Feature',
+                    'properties': {},
+                    'geometry': {
+                        'type': 'LineString',
+                        'coordinates': data
+                    }
+                }
+            });
+            map.addLayer({
+                'id': 'route',
+                'type': 'line',
+                'source': 'route',
+                'layout': {
+                    'line-join': 'round',
+                    'line-cap': 'round'
+                },
+                'paint': {
+                    'line-color': '#4167e5',
+                    'line-width': 5
+                }
+            });
+            console.log(data)
+        });
+    });
 </script>

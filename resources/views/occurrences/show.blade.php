@@ -59,57 +59,20 @@
                                 );
                                 map.addControl(new mapboxgl.FullscreenControl());
 
-                                @foreach($users as $user)
-                                        @if(count($user->getLocationsByOccurrence($occurrence)) > 0)
-                                        var positions = {!! json_encode($user->getLocationsByOccurrence($occurrence)) !!};
 
-                                        var formmatedPositions = [];
 
-                                            for (i = 0; i < positions.length; i++) {
-                                                formmatedPositions.push([parseFloat(positions[i].long),parseFloat(positions[i].lat)])
-                                            }
+                                var formmatedPositions = [];
+
 
                                 console.log(formmatedPositions)
 
-                                var linestring = turf.lineString(positions);
-
-                                map.on('load', function () {
-                                    map.addSource('route', {
-                                        'type': 'geojson',
-                                        'data': {
-                                            'type': 'Feature',
-                                            'properties': {},
-                                            'geometry': {
-                                                'type': 'LineString',
-                                                'coordinates': formmatedPositions
-                                            }
-                                        }
-                                    });
-                                    map.addLayer({
-                                        'id': 'route',
-                                        'type': 'line',
-                                        'source': 'route',
-                                        'layout': {
-                                            'line-join': 'round',
-                                            'line-cap': 'round'
-                                        },
-                                        'paint': {
-                                            'line-color': '#888',
-                                            'line-width': 8
-                                        }
-                                    });
-                                });
 
 
-                                @endif
 
-                                new mapboxgl.Marker()
-                                    .setLngLat([{!! $user->longitude !!},{!! $user->latitude !!}])
-                                    .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                                        .setHTML("<img width='20px' src='http://127.0.0.1:8000/images/avatar.png'><br><h6>Bombeiro - {!! $user->name !!}</h6>"))
-                                    .addTo(map);
 
-                                @endforeach
+
+
+
 
                             </script>
                         </div>
@@ -133,7 +96,7 @@
                                     </thead>
                                     <tbody>
                                     @foreach($users as $user)
-                                        <tr>
+                                        <tr data-bombeiroID="{{$user->id}}" data-ocorrenciaID="{{$occurrence->id}}" class="linhaOcorrencia linhaBombeiro">
                                             <td>{{$user->name}}</td>
                                             @switch($user->pivot->status)
                                                 @case(0)
