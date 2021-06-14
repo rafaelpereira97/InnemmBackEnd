@@ -231,6 +231,15 @@
                 map.removeSource('route')
             }
 
+            var lastItem = data.pop();
+            map.flyTo({
+                center: [
+                    lastItem[0],
+                    lastItem[1]
+                ],
+                zoom: 12,
+                essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
 
             map.addSource('route', {
                 'type': 'geojson',
