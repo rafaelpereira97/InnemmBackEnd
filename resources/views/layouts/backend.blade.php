@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
+
+    <link rel="stylesheet" href="{{asset('dist/css/custom.css')}}">
+
     <style>
         .content-wrapper{
             height: initial;
@@ -180,6 +183,7 @@
 <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('dist/js/demo.js')}}"></script>
+
 </body>
 </html>
 

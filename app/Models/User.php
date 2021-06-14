@@ -50,4 +50,9 @@ class User extends Authenticatable
     public function occurrences(){
         return $this->belongsToMany(Occurrence::class)->withPivot('opened','status');
     }
+
+    public function getLocationsByOccurrence(Occurrence $occurrence){
+        return $this->hasMany(Userlocation::class)
+            ->where('occurrence_id',$occurrence->id)->get(['long','lat']);
+    }
 }

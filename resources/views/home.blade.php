@@ -171,7 +171,7 @@
                                     </thead>
                                     <tbody>
                                     @foreach($occurrences as $occurrence)
-                                    <tr>
+                                    <tr class="linhaOcorrencia" onclick="window.location.href='{{route('occurrence.show',$occurrence)}}'">
                                         <td>{{$occurrence->title}}</td>
                                         @if($occurrence->urgency_id == 1)
                                             <td><span class="badge badge-danger">{{$occurrence->urgency->name}}</span></td>

@@ -104,6 +104,13 @@ class OccurrenceController extends Controller
 
     }
 
+    public function getUserInfo(Request $request){
+        $user = $request->user()->with('groups');
+        return response()->json($user,200);
+    }
+
+
+
     function distance($lat1, $lon1, $lat2, $lon2, $unit) {
 
         $theta = $lon1 - $lon2;

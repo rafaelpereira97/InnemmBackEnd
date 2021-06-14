@@ -29,6 +29,7 @@ Route::prefix('occurrences')->group(function(){
     Route::get('/',[OccurrenceController::class,'index'])->name('occurrence.index');
     Route::post('/store',[OccurrenceController::class, 'store'])->name('occurrence.store');
     Route::get('/getAutoMessages/{group?}',[OccurrenceController::class, 'getAutoMessages'])->name('occurence.getAutoMessages');
+    Route::get('/show/{occurrence}',[OccurrenceController::class, 'show'])->name('occurrence.show');
 });
 
 Route::prefix('groups')->group(function(){
