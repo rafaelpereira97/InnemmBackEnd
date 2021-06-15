@@ -111,6 +111,29 @@ class OccurrenceController extends Controller
     }
 
 
+    public function getAverageArriveTime(Request $request){
+
+        $user = User::find($request->user()->id);
+        $tempos = array();
+
+        foreach($user->occurrences as $occurrence){
+            if(count($occurrence->userlocations) > 0){
+                $primeiraLoc = $occurrence->userlocations()->first()->created_at;
+                $segundaLoc = $occurrence->userlocations()->get()->last()->created_at;
+
+                $totalDuration = $segundaLoc->diffInMinutes($primeiraLoc);
+
+                array_push($tempos, $totalDuration);
+            }
+        }
+
+        $tempoMedioChegada = collect($tempos)->avg();
+
+        return response()->json(['tempo' => $tempoMedioChegada],200);
+
+    }
+
+
 
     function distance($lat1, $lon1, $lat2, $lon2, $unit) {
 

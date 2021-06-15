@@ -55,4 +55,8 @@ class User extends Authenticatable
         return $this->hasMany(Userlocation::class)
             ->where('occurrence_id',$occurrence->id)->get(['long','lat']);
     }
+
+    public function userlocations(){
+        return $this->hasMany(Userlocation::class);
+    }
 }

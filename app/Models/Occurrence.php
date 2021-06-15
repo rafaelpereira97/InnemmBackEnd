@@ -16,4 +16,8 @@ class Occurrence extends Model
     public function users(){
         return $this->belongsToMany(User::class)->withPivot('opened','status');
     }
+
+    public function userlocations(){
+        return $this->hasMany(Userlocation::class);
+    }
 }

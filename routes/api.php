@@ -21,7 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('login',[\App\Http\Controllers\API\AuthController::class,'login']);
 Route::post('attachPlayerIDtoLoggedUser', [\App\Http\Controllers\API\AuthController::class, 'attachPlayerIDtoLoggedUser'])->middleware('auth:api');
 Route::post('getUserInfo', [\App\Http\Controllers\API\OccurrenceController::class, 'getUserInfo'])->middleware('auth:api');
-
+Route::post('getAverageArriveTime', [\App\Http\Controllers\API\OccurrenceController::class, 'getAverageArriveTime'])->middleware('auth:api');
 
 Route::post('getOccurrences',[\App\Http\Controllers\API\OccurrenceController::class, 'getOcurrences'])->middleware('auth:api');
 Route::post('saveLastPosition',[\App\Http\Controllers\API\AuthController::class,'saveLastPosition'])->middleware('auth:api');
