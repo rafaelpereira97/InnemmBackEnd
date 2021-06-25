@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a101c2f-0b73-457e-93e0-908a1ac36f0d" name="Default Changelist" comment="api get average time to arrive">
-      <change afterPath="$PROJECT_DIR$/resources/views/groups/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/groups/edit.blade.php" afterDir="false" />
+    <list default="true" id="6a101c2f-0b73-457e-93e0-908a1ac36f0d" name="Default Changelist" comment="CRUD">
+      <change afterPath="$PROJECT_DIR$/app/Http/GraphModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GroupController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GroupController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Group.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Group.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/groups/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/groups/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/OccurrenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/OccurrenceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,13 +210,7 @@
       <workItem from="1623847669643" duration="198000" />
       <workItem from="1624012491103" duration="432000" />
       <workItem from="1624538983090" duration="5256000" />
-    </task>
-    <task id="LOCAL-00004" summary="..">
-      <created>1619447690641</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1619447690641</updated>
+      <workItem from="1624618031385" duration="6385000" />
     </task>
     <task id="LOCAL-00005" summary="..">
       <created>1619447789757</created>
@@ -558,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623782831315</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="CRUD">
+      <created>1624618230426</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1624618230426</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -579,7 +576,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Get all ocurrences" />
     <MESSAGE value="save last position of fireman" />
     <MESSAGE value="marcadores dos bombeiros no mapa" />
     <MESSAGE value="marcadores dos bombeiros no mapa com html no popup" />
@@ -604,6 +600,7 @@
     <MESSAGE value=".." />
     <MESSAGE value="...." />
     <MESSAGE value="api get average time to arrive" />
-    <option name="LAST_COMMIT_MESSAGE" value="api get average time to arrive" />
+    <MESSAGE value="CRUD" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRUD" />
   </component>
 </project>

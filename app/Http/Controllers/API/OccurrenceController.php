@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\GraphModel;
 use App\Models\Corporationdetail;
 use App\Models\Occurrence;
 use App\Models\OccurrenceUser;
@@ -131,6 +132,75 @@ class OccurrenceController extends Controller
 
         return response()->json(['tempo' => $tempoMedioChegada],200);
 
+    }
+
+
+
+    public function countAcceptedOccurrences(Request $request){
+        $user = User::find($request->user()->id);
+
+        $occurrences = Occurrence::join('occurrence_user', 'occurrence_user.occurrence_id', '=', 'occurrences.id')
+            ->where('occurrence_user.status',1)
+            ->where('occurrence_user.user_id',$user->id)
+            ->get()->count();
+
+        return response()->json(['aceites' => $occurrences]);
+    }
+
+    public function countRefusedOccurrences(Request $request){
+        $user = User::find($request->user()->id);
+
+        $occurrences = Occurrence::join('occurrence_user', 'occurrence_user.occurrence_id', '=', 'occurrences.id')
+            ->where('occurrence_user.status',2)
+            ->where('occurrence_user.user_id',$user->id)
+            ->get()->count();
+
+        return response()->json(['recusadas' => $occurrences]);
+    }
+
+
+    public function occurrencesAcceptedByMonth(Request $request){
+        $user = User::find($request->user()->id);
+
+        $months = [01,02,03,04,05,06,07,8,9,10,11,12];
+
+        $array = array();
+
+        foreach($months as $month){
+
+            $graphModel = new GraphModel();
+
+            $occurrencesAccepted = Occurrence::join('occurrence_user', 'occurrence_user.occurrence_id', '=', 'occurrences.id')
+                ->selectRaw('COUNT(*) as accepted')
+                ->where('occurrence_user.status',1)
+                ->where('occurrence_user.user_id',$user->id)
+                ->whereMonth('occurrence_user.updated_at', $month)
+                ->get()->first()->accepted;
+
+            $occurrencesRejected = Occurrence::join('occurrence_user', 'occurrence_user.occurrence_id', '=', 'occurrences.id')
+                ->selectRaw('COUNT(*) as rejected')
+                ->where('occurrence_user.status',2)
+                ->where('occurrence_user.user_id',$user->id)
+                ->whereMonth('occurrence_user.updated_at', $month)
+                ->get()->first()->rejected;
+
+            $graphModel->accepted = $occurrencesAccepted;
+            $graphModel->rejected = $occurrencesRejected;
+
+            array_push($array,$graphModel);
+
+        }
+
+        /*$occurrences = Occurrence::join('occurrence_user', 'occurrence_user.occurrence_id', '=', 'occurrences.id')
+            ->selectRaw('COUNT(*), MONTH(occurrence_user.updated_at) as mes')
+            ->where('occurrence_user.status',1)
+            ->where('occurrence_user.user_id',$user->id)
+            ->groupBy('mes')
+            ->get();*/
+
+        //dd($occurrences);
+
+        return response()->json(['ocorrencias' => $array]);
     }
 
 
