@@ -32,6 +32,8 @@
                 <!-- /.card-header -->
                 <div class="card-body">
 
+                    <a href="{{route('group.create')}}" class="btn btn-primary float-right">Novo Grupo</a>
+
                     <table class="table m-0">
                         <thead>
                         <tr>
@@ -45,6 +47,12 @@
                                 <td>{{$group->name}}</td>
                                 <td>
                                     <div class="sparkbar" data-color="#00a65a" data-height="20">{{$group->description}}</div>
+                                </td>
+                                <td>
+                                    <div class="float-right">
+                                    <a href="{{route('group.edit',$group)}}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                                    <a data-groupid="{{$group->id}}" data-toggle="modal" data-target="#deleteModal" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach
@@ -60,4 +68,30 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form method="POST" action="{{route('group.delete')}}">
+                @csrf
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tem a certeza?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Tem a certeza que deseja remover ?
+                    <input type="hidden" value="" id="group_id" name="group_id">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger">Remover</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+
 @endsection

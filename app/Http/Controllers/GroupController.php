@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Group;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller
@@ -19,47 +20,51 @@ class GroupController extends Controller
             ->with('groups',$groups);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+        $bombeiros = User::all();
+
+        return view('groups.create')
+            ->with('bombeiros',$bombeiros);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $group = new Group();
+        $group->name = $request->name;
+        $group->description = $request->description;
+        $group->save();
+
+        $group->users()->sync($request->bombeiros);
+
+        return redirect(route('group.index'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show(Group $group)
     {
-        //
+        $bombeiros = User::all();
+
+        return view('groups.edit')
+            ->with('group',$group)
+            ->with('bombeiros',$bombeiros);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(Request $request, Group $group)
     {
-        //
+        $group->name = $request->name;
+        $group->description = $request->description;
+        $group->save();
+
+        $group->users()->sync($request->bombeiros);
+
+        return redirect(route('group.index'));
+    }
+
+    public function delete(Request $request){
+        $group = Group::find($request->group_id);
+        $group->delete();
+        return redirect(route('group.index'));
     }
 
     /**

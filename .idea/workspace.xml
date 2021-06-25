@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a101c2f-0b73-457e-93e0-908a1ac36f0d" name="Default Changelist" comment="Listagem de grupos e estados de emergencia">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="6a101c2f-0b73-457e-93e0-908a1ac36f0d" name="Default Changelist" comment="api get average time to arrive">
+      <change afterPath="$PROJECT_DIR$/resources/views/groups/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/groups/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/OccurrenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/OccurrenceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/occurrences/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/occurrences/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GroupController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GroupController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Group.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Group.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/groups/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/groups/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +25,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -145,17 +155,20 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/images" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/dist/css" />
+      <recent name="$PROJECT_DIR$/public/images" />
     </key>
   </component>
   <component name="RunManager">
@@ -192,28 +205,15 @@
       <workItem from="1622122943143" duration="191000" />
       <workItem from="1622126674915" duration="39000" />
       <workItem from="1622196978536" duration="850000" />
-      <workItem from="1623066186574" duration="2358000" />
-    </task>
-    <task id="LOCAL-00001" summary="Implementação do backend .">
-      <created>1617988094501</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1617988094501</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Implementação do backend .">
-      <created>1619393796825</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1619393796825</updated>
-    </task>
-    <task id="LOCAL-00003" summary="base de dados">
-      <created>1619434120719</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1619434120719</updated>
+      <workItem from="1623066186574" duration="8038000" />
+      <workItem from="1623150916452" duration="3372000" />
+      <workItem from="1623197528281" duration="660000" />
+      <workItem from="1623239194219" duration="1229000" />
+      <workItem from="1623667119271" duration="226000" />
+      <workItem from="1623667369176" duration="16426000" />
+      <workItem from="1623847669643" duration="198000" />
+      <workItem from="1624012491103" duration="432000" />
+      <workItem from="1624538983090" duration="5256000" />
     </task>
     <task id="LOCAL-00004" summary="..">
       <created>1619447690641</created>
@@ -404,20 +404,181 @@
       <option name="project" value="LOCAL" />
       <updated>1621986793596</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="UpdateUserOccurrenceLocation">
+      <created>1623073184202</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1623073184202</updated>
+    </task>
+    <task id="LOCAL-00032" summary="debug">
+      <created>1623073253320</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1623073253320</updated>
+    </task>
+    <task id="LOCAL-00033" summary="debug">
+      <created>1623074265129</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1623074265130</updated>
+    </task>
+    <task id="LOCAL-00034" summary="..">
+      <created>1623081291164</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1623081291164</updated>
+    </task>
+    <task id="LOCAL-00035" summary="notification high priority">
+      <created>1623083137452</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1623083137452</updated>
+    </task>
+    <task id="LOCAL-00036" summary="notification high priority">
+      <created>1623083232228</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1623083232228</updated>
+    </task>
+    <task id="LOCAL-00037" summary="notification high priority">
+      <created>1623083533926</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1623083533926</updated>
+    </task>
+    <task id="LOCAL-00038" summary="..">
+      <created>1623175916481</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1623175916481</updated>
+    </task>
+    <task id="LOCAL-00039" summary="test">
+      <created>1623667610247</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1623667610247</updated>
+    </task>
+    <task id="LOCAL-00040" summary="show occurrence details and API to send user info">
+      <created>1623685678361</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1623685678361</updated>
+    </task>
+    <task id="LOCAL-00041" summary="show occurrence details and API to send user info">
+      <created>1623686402569</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1623686402569</updated>
+    </task>
+    <task id="LOCAL-00042" summary="show occurrence details and API to send user info">
+      <created>1623686477036</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1623686477036</updated>
+    </task>
+    <task id="LOCAL-00043" summary="show occurrence details and API to send user info">
+      <created>1623686521097</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1623686521097</updated>
+    </task>
+    <task id="LOCAL-00044" summary="show occurrence details and API to send user info">
+      <created>1623686562830</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1623686562830</updated>
+    </task>
+    <task id="LOCAL-00045" summary="show occurrence details and API to send user info">
+      <created>1623686669935</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1623686669935</updated>
+    </task>
+    <task id="LOCAL-00046" summary="show occurrence details and API to send user info">
+      <created>1623686719327</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1623686719327</updated>
+    </task>
+    <task id="LOCAL-00047" summary="show occurrence details and API to send user info">
+      <created>1623686876692</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1623686876692</updated>
+    </task>
+    <task id="LOCAL-00048" summary="..">
+      <created>1623688908171</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1623688908171</updated>
+    </task>
+    <task id="LOCAL-00049" summary="..">
+      <created>1623694393178</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1623694393178</updated>
+    </task>
+    <task id="LOCAL-00050" summary="....">
+      <created>1623698232185</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1623698232186</updated>
+    </task>
+    <task id="LOCAL-00051" summary="....">
+      <created>1623701719111</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1623701719111</updated>
+    </task>
+    <task id="LOCAL-00052" summary="api get average time to arrive">
+      <created>1623782831314</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1623782831315</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Implementação do backend ." />
-    <MESSAGE value="base de dados" />
-    <MESSAGE value=".." />
-    <MESSAGE value="dashboard, index of occurrences" />
-    <MESSAGE value="Layout Login" />
     <MESSAGE value="Get all ocurrences" />
     <MESSAGE value="save last position of fireman" />
     <MESSAGE value="marcadores dos bombeiros no mapa" />
@@ -435,44 +596,14 @@
     <MESSAGE value="mensagens automaticas" />
     <MESSAGE value="Dashboard e Inserir Ocorrencia com mensagens automaticas e picker de posicao" />
     <MESSAGE value="Fix do admin lte" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix do admin lte" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="458" y="209" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615661455195">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="458" y="209" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1615661455195" />
-    <state x="354" y="25" width="831" height="818" key="CommitChangelistDialog2" timestamp="1621986793316">
-      <screen x="0" y="25" width="1440" height="817" />
-    </state>
-    <state x="303" y="25" width="831" height="820" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1619466200428" />
-    <state x="354" y="25" key="CommitChangelistDialog2/0.25.1440.817@0.25.1440.817" timestamp="1621986793316" />
-    <state x="354" y="25" width="831" height="818" key="CommitChangelistDialog2/0.25.1440.818@0.25.1440.818" timestamp="1621872268928" />
-    <state x="303" y="25" key="CommitChangelistDialog2/0.25.1440.819@0.25.1440.819" timestamp="1620839547597" />
-    <state x="303" y="25" key="CommitChangelistDialog2/0.25.1440.820@0.25.1440.820" timestamp="1620655772774" />
-    <state x="571" y="355" key="Github.ShareDialog" timestamp="1615679061102">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="571" y="355" key="Github.ShareDialog/0.0.1440.900@0.0.1440.900" timestamp="1615679061102" />
-    <state x="463" y="76" key="Github.UntrackedFilesDialog" timestamp="1615679074014">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="463" y="76" key="Github.UntrackedFilesDialog/0.0.1440.900@0.0.1440.900" timestamp="1615679074014" />
-    <state x="319" y="169" key="Vcs.Push.Dialog.v2" timestamp="1621986794726">
-      <screen x="0" y="25" width="1440" height="817" />
-    </state>
-    <state x="319" y="158" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1619466203358" />
-    <state x="319" y="169" key="Vcs.Push.Dialog.v2/0.25.1440.817@0.25.1440.817" timestamp="1621986794726" />
-    <state x="319" y="169" key="Vcs.Push.Dialog.v2/0.25.1440.818@0.25.1440.818" timestamp="1621872270282" />
-    <state x="319" y="169" key="Vcs.Push.Dialog.v2/0.25.1440.819@0.25.1440.819" timestamp="1620839549819" />
-    <state x="319" y="169" key="Vcs.Push.Dialog.v2/0.25.1440.820@0.25.1440.820" timestamp="1620654878620" />
-    <state x="385" y="204" width="670" height="616" key="search.everywhere.popup" timestamp="1621986525304">
-      <screen x="0" y="25" width="1440" height="817" />
-    </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1619466625249" />
-    <state x="385" y="204" width="670" height="616" key="search.everywhere.popup/0.25.1440.817@0.25.1440.817" timestamp="1621986525304" />
-    <state x="385" y="204" width="670" height="616" key="search.everywhere.popup/0.25.1440.818@0.25.1440.818" timestamp="1621867925581" />
-    <state x="385" y="204" width="670" height="616" key="search.everywhere.popup/0.25.1440.819@0.25.1440.819" timestamp="1620837822769" />
-    <state x="385" y="204" width="670" height="616" key="search.everywhere.popup/0.25.1440.820@0.25.1440.820" timestamp="1619630483321" />
+    <MESSAGE value="UpdateUserOccurrenceLocation" />
+    <MESSAGE value="debug" />
+    <MESSAGE value="notification high priority" />
+    <MESSAGE value="test" />
+    <MESSAGE value="show occurrence details and API to send user info" />
+    <MESSAGE value=".." />
+    <MESSAGE value="...." />
+    <MESSAGE value="api get average time to arrive" />
+    <option name="LAST_COMMIT_MESSAGE" value="api get average time to arrive" />
   </component>
 </project>

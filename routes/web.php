@@ -36,6 +36,11 @@ Route::prefix('occurrences')->group(function(){
 Route::prefix('groups')->group(function(){
     Route::get('/',[GroupController::class,'index'])->name('group.index');
     Route::post('/store',[GroupController::class, 'store'])->name('group.store');
+    Route::get('/create',[GroupController::class,'create'])->name('group.create');
+    Route::get('/edit/{group}',[GroupController::class,'show'])->name('group.edit');
+    Route::post('/storeEdit/{group}',[GroupController::class,'edit'])->name('group.storeEdit');
+    Route::post('/delete',[GroupController::class,'delete'])->name('group.delete');
+
 });
 
 Route::prefix('status')->group(function(){

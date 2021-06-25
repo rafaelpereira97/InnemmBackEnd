@@ -268,4 +268,12 @@
             console.log(data)
         });
     });
+
+
+
+    $('#deleteModal').on('shown.bs.modal', function (e) {
+        let group_id = $(e.relatedTarget).attr('data-groupid');
+        $("#group_id").val(group_id)
+    })
+
 </script>
