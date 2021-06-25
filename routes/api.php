@@ -11,7 +11,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('login',[\App\Http\Controllers\API\AuthController::class,'login']);
 Route::post('attachPlayerIDtoLoggedUser', [\App\Http\Controllers\API\AuthController::class, 'attachPlayerIDtoLoggedUser'])->middleware('auth:api');
 Route::post('getUserInfo', [\App\Http\Controllers\API\OccurrenceController::class, 'getUserInfo'])->middleware('auth:api');
-Route::get('getAverageArriveTime', [\App\Http\Controllers\API\OccurrenceController::class, 'getAverageArriveTime'])->middleware('auth:api');
+Route::post('getAverageArriveTime', [\App\Http\Controllers\API\OccurrenceController::class, 'getAverageArriveTime'])->middleware('auth:api');
 
 
 Route::post('getOccurrences',[\App\Http\Controllers\API\OccurrenceController::class, 'getOcurrences'])->middleware('auth:api');
@@ -27,6 +27,6 @@ Route::post('rejectOccurrence',[\App\Http\Controllers\API\OccurrenceController::
 
 
 //DASHBOARD
-Route::get('countAcceptedOccurrences',[\App\Http\Controllers\API\OccurrenceController::class,'countAcceptedOccurrences'])->middleware('auth:api');
-Route::get('countRefusedOccurrences',[\App\Http\Controllers\API\OccurrenceController::class,'countRefusedOccurrences'])->middleware('auth:api');
-Route::get('occurrencesAcceptedByMonth',[\App\Http\Controllers\API\OccurrenceController::class,'occurrencesAcceptedByMonth'])->middleware('auth:api');
+Route::post('countAcceptedOccurrences',[\App\Http\Controllers\API\OccurrenceController::class,'countAcceptedOccurrences'])->middleware('auth:api');
+Route::post('countRefusedOccurrences',[\App\Http\Controllers\API\OccurrenceController::class,'countRefusedOccurrences'])->middleware('auth:api');
+Route::post('occurrencesAcceptedByMonth',[\App\Http\Controllers\API\OccurrenceController::class,'occurrencesAcceptedByMonth'])->middleware('auth:api');
