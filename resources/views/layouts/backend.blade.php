@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="{{asset('dist/css/custom.css')}}">
 
+
     <style>
         .content-wrapper{
             height: initial;
@@ -152,6 +153,23 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-cog"></i>
+                            <p>
+                                Definições
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview" style="display: none;">
+                            <li class="nav-item">
+                                <a href="{{route('bombeiro.index')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Bombeiros</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -178,7 +196,8 @@
 <!-- jQuery -->
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
-<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+{{--<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>--}}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
@@ -274,6 +293,11 @@
     $('#deleteModal').on('shown.bs.modal', function (e) {
         let group_id = $(e.relatedTarget).attr('data-groupid');
         $("#group_id").val(group_id)
+    })
+
+    $('#deleteBombeiroModal').on('shown.bs.modal', function (e) {
+        let bombeiro_id = $(e.relatedTarget).attr('data-bombeiroid');
+        $("#bombeiro_id").val(bombeiro_id)
     })
 
 </script>

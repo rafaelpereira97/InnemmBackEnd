@@ -145,7 +145,7 @@
                          </div>
                     </div>
                     <div class="col-md-4">
-                         <div class="card">
+                         <div style="max-height: 650px;overflow: scroll;" class="card">
                         <div class="card-header border-transparent">
                             <h3 class="card-title">Ocorrências em Curso</h3>
 
@@ -160,34 +160,80 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body p-0">
-                            <div class="table-responsive">
-                                <table class="table m-0">
-                                    <thead>
-                                    <tr>
-                                        <th>Ocorrência</th>
-                                        <th>Urgência</th>
-                                        <th>Descrição</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($occurrences as $occurrence)
-                                    <tr class="linhaOcorrencia" onclick="window.location.href='{{route('occurrence.show',$occurrence)}}'">
-                                        <td>{{$occurrence->title}}</td>
-                                        @if($occurrence->urgency_id == 1)
-                                            <td><span class="badge badge-danger">{{$occurrence->urgency->name}}</span></td>
-                                        @elseif($occurrence->urgency_id == 2)
-                                            <td><span class="badge badge-warning">{{$occurrence->urgency->name}}</span></td>
-                                        @else
-                                            <td><span class="badge badge-success">{{$occurrence->urgency->name}}</span></td>
-                                        @endif
-                                        <td>
-                                            <div class="sparkbar" data-color="#00a65a" data-height="20">{{$occurrence->description}}</div>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
+
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button  class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#ativas" type="button" role="tab" aria-controls="home" aria-selected="true">A decorrer</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#terminadas" type="button" role="tab" aria-controls="profile" aria-selected="false">Terminadas</button>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="ativas" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="table-responsive">
+                                        <table class="table m-0">
+                                            <thead>
+                                            <tr>
+                                                <th>Ocorrência</th>
+                                                <th>Urgência</th>
+                                                <th>Descrição</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach($occurrences as $occurrence)
+                                                <tr class="linhaOcorrencia" onclick="window.location.href='{{route('occurrence.show',$occurrence)}}'">
+                                                    <td>{{$occurrence->title}}</td>
+                                                    @if($occurrence->urgency_id == 1)
+                                                        <td><span class="badge badge-danger">{{$occurrence->urgency->name}}</span></td>
+                                                    @elseif($occurrence->urgency_id == 2)
+                                                        <td><span class="badge badge-warning">{{$occurrence->urgency->name}}</span></td>
+                                                    @else
+                                                        <td><span class="badge badge-success">{{$occurrence->urgency->name}}</span></td>
+                                                    @endif
+                                                    <td>
+                                                        <div class="sparkbar text" data-color="#00a65a" data-height="20">{{$occurrence->description}}</div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="terminadas" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="table-responsive">
+                                        <table class="table m-0">
+                                            <thead>
+                                            <tr>
+                                                <th>Ocorrência</th>
+                                                <th>Urgência</th>
+                                                <th>Descrição</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach($occurrencesDone as $occurrence)
+                                                <tr class="linhaOcorrencia" onclick="window.location.href='{{route('occurrence.show',$occurrence)}}'">
+                                                    <td>{{$occurrence->title}}</td>
+                                                    @if($occurrence->urgency_id == 1)
+                                                        <td><span class="badge badge-danger">{{$occurrence->urgency->name}}</span></td>
+                                                    @elseif($occurrence->urgency_id == 2)
+                                                        <td><span class="badge badge-warning">{{$occurrence->urgency->name}}</span></td>
+                                                    @else
+                                                        <td><span class="badge badge-success">{{$occurrence->urgency->name}}</span></td>
+                                                    @endif
+                                                    <td>
+                                                        <div class="sparkbar text" data-color="#00a65a" data-height="20">{{$occurrence->description}}</div>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
+
+
                             <!-- /.table-responsive -->
                         </div>
 

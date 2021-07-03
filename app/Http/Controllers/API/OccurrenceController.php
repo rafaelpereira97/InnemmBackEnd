@@ -16,7 +16,7 @@ class OccurrenceController extends Controller
 {
     public function getOcurrences(Request $request){
         $ocurrences = $request->user()
-            ->occurrences()->with("urgency")
+            ->occurrences()->with("urgency", "userlocations")
             ->get();
         return response()->json($ocurrences);
     }

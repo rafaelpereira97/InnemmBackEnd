@@ -5,7 +5,7 @@ use App\Http\Controllers\OccurrenceController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\MessageController;
-
+use App\Http\Controllers\BombeiroController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,7 +40,6 @@ Route::prefix('groups')->group(function(){
     Route::get('/edit/{group}',[GroupController::class,'show'])->name('group.edit');
     Route::post('/storeEdit/{group}',[GroupController::class,'edit'])->name('group.storeEdit');
     Route::post('/delete',[GroupController::class,'delete'])->name('group.delete');
-
 });
 
 Route::prefix('status')->group(function(){
@@ -51,4 +50,14 @@ Route::prefix('status')->group(function(){
 Route::prefix('messages')->group(function(){
     Route::get('/',[MessageController::class,'index'])->name('message.index');
     Route::post('/store',[MessageController::class, 'store'])->name('message.store');
+});
+
+Route::prefix('bombeiros')->group(function (){
+    Route::get('/',[BombeiroController::class,'index'])->name('bombeiro.index');
+    Route::get('/create',[BombeiroController::class,'create'])->name('bombeiro.create');
+    Route::post('/store',[BombeiroController::class,'store'])->name('bombeiro.store');
+    Route::post('/delete',[BombeiroController::class,'delete'])->name('bombeiro.delete');
+    Route::get('/edit/{user}',[BombeiroController::class,'edit'])->name('bombeiro.edit');
+    Route::post('/save',[BombeiroController::class,'save'])->name('bombeiro.save');
+
 });

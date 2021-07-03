@@ -5,3 +5,11 @@
 .linhaOcorrencia:hover{
     background-color: #f1f1f1;
 }
+
+.text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}

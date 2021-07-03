@@ -37,8 +37,9 @@ class HomeController extends Controller
 
         $bombeirosCount = User::where('admin',0)->count();
 
+        $occurrences = Occurrence::where('status',1)->get();
+        $occurrencesDone = Occurrence::where('status',0)->get();
 
-        $occurrences = Occurrence::all();
         $users = User::where('latitude','!=',null)
                 ->where('longitude','!=',null)
                 ->get();
@@ -49,7 +50,8 @@ class HomeController extends Controller
             ->with('activeOccurrences',$activeOccurrences)
             ->with('doneOccurrences',$doneOccurrences)
             ->with('adminsCount',$adminsCount)
-            ->with('bombeirosCount',$bombeirosCount);
+            ->with('bombeirosCount',$bombeirosCount)
+            ->with('occurrencesDone',$occurrencesDone);
 
     }
 }
