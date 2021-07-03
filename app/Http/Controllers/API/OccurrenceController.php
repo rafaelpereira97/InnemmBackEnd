@@ -120,8 +120,8 @@ class OccurrenceController extends Controller
 
         foreach($user->occurrences as $occurrence){
             if(count($occurrence->userlocations) > 0){
-                $primeiraLoc = $occurrence->userlocations->where('user_id',$user->id)->first()->created_at;
-                $segundaLoc = $occurrence->userlocations->where('user_id',$user->id)->get()->last()->created_at;
+                $primeiraLoc = $occurrence->userlocations()->first()->created_at;
+                $segundaLoc = $occurrence->userlocations()->get()->last()->created_at;
 
                 $totalDuration = $segundaLoc->diffInMinutes($primeiraLoc);
 
