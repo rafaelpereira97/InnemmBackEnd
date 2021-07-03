@@ -48,6 +48,7 @@ class OccurrenceController extends Controller
 
             //ACCEPTED
             $occurrenceUser->status = 1;
+            $occurrenceUser->estimated_arrivetime = $request->estimated_arrivetime;
             $occurrenceUser->save();
 
             return response()->json(null,200);

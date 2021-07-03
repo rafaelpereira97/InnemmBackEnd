@@ -20,6 +20,7 @@ Route::post('occurrenceOpened',[\App\Http\Controllers\API\OccurrenceController::
 Route::post('updateOccurrenceUserLocation',[\App\Http\Controllers\API\OccurrenceController::class,'updateOccurrenceUserLocation'])->middleware('auth:api');
 
 
+
 //ACCEPT AND REJECT OCCURRENCES
 Route::post('acceptOccurrence',[\App\Http\Controllers\API\OccurrenceController::class,'acceptOccurrence'])->middleware('auth:api');
 Route::post('rejectOccurrence',[\App\Http\Controllers\API\OccurrenceController::class,'rejectOccurrence'])->middleware('auth:api');
