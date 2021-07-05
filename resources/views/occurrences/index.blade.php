@@ -69,36 +69,38 @@
                         </select>
                     </div>
                         <div class="form-group">
-                            <label for="urgency">Local da Ocorrência</label>
-                            <input name="coordinates" required type="text" class="form-control" id="coordinates" placeholder="Coordenadas da Ocorrência">
+                            <input name="coordinates" required type="hidden" class="form-control" id="coordinates" placeholder="Coordenadas da Ocorrência">
                         </div>
-                    <div style="height: 300px">
-                        <div id="map" style="width: 60%; height: 300px;"></div>
+                    <div>
+                        <div class="form-group">
+                        <label>Pesquisar Local da Ocorrência</label>
+                        </div>
+                        <div style=" margin: auto;
+  width: 50%;" id="geocoder" class="geocoder"></div>
+                        <br>
+                        <div id="map" style="width: 100%; height: 500px;"></div>
+
+
                         <script>
                             mapboxgl.accessToken = 'pk.eyJ1IjoicmFmYWVscGVyZWlyYTk3IiwiYSI6ImNrb2l1OWRoMTBvb3gyeHJtMjc5bHQzcjMifQ.a9JVwy1esI237WyBi2uQUQ';
                             var map = new mapboxgl.Map({
                                 container: 'map',
                                 style: 'mapbox://styles/mapbox/streets-v11',
-                                zoom: 3 // starting zoom
+                                center: [{!! $corporation->long !!}, {!! $corporation->lat !!}],
+                                zoom: 13
                             });
-                            map.on('style.load', function() {
-                                map.on('click', function(e) {
-                                    var coordinates = e.lngLat;
-                                    $("#coordinates").val(coordinates.lat+","+coordinates.lng)
-                                    new mapboxgl.Popup()
-                                        .setLngLat(coordinates)
-                                        .setHTML('<b>LOCAL DA OCORRÊNCIA</b>')
-                                        .addTo(map);
-                                });
+
+                            // Add the control to the map.
+                            var geocoder = new MapboxGeocoder({
+                                accessToken: mapboxgl.accessToken,
+                                mapboxgl: mapboxgl
                             });
-                            map.addControl(
-                                new mapboxgl.GeolocateControl({
-                                    positionOptions: {
-                                        enableHighAccuracy: true
-                                    },
-                                    trackUserLocation: true
-                                })
-                            );
+                            document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
+                            geocoder.on('result', function(e) {
+                                //console.log(e)
+                                $("#coordinates").val(e.result.center[1]+','+e.result.center[0])
+                            })
                         </script>
                     </div>
                         <br>
@@ -116,3 +118,5 @@
 @endsection
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css" type="text/css">

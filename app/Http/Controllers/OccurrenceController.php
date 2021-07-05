@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Corporationdetail;
 use App\Models\Group;
 use App\Models\Message;
 use App\Models\Occurrence;
@@ -21,11 +22,13 @@ class OccurrenceController extends Controller
         $urgencies = Urgency::all();
         $groups = Group::all();
         $messages = Message::all();
+        $corporation = Corporationdetail::first();
 
         return view('occurrences.index')
             ->with('urgencies',$urgencies)
             ->with('groups',$groups)
-            ->with('messages',$messages);
+            ->with('messages',$messages)
+            ->with('corporation',$corporation);
     }
 
     /**
@@ -77,9 +80,11 @@ class OccurrenceController extends Controller
     public function show(Occurrence $occurrence)
     {
         $users = $occurrence->users()->withPivot('opened','status')->get();
+        $corporation = Corporationdetail::first();
         return view('occurrences.show')
             ->with('users',$users)
-            ->with('occurrence',$occurrence);
+            ->with('occurrence',$occurrence)
+            ->with('corporation',$corporation);
     }
 
 

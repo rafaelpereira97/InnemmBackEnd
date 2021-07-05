@@ -102,12 +102,43 @@
                              </div>
                              <div class="card-body p-0">
                                  <div id="map" style="width: 100%; height: 600px;"></div>
+                                 <style>
+                                     .corporationIcon {
+                                         background-image: url('https://image.flaticon.com/icons/png/512/1138/1138051.png');
+                                         background-size: cover;
+                                         width: 50px;
+                                         height: 50px;
+                                         border-radius: 50%;
+                                         cursor: pointer;
+                                     }
+
+                                                          .firemanIcon {
+                                                              background-image: url('http://127.0.0.1:8000/images/avatar.png');
+                                                              background-size: cover;
+                                                              width: 50px;
+                                                              height: 50px;
+                                                              border-radius: 50%;
+                                                              cursor: pointer;
+                                                          }
+
+                                     .occurrenceIcon {
+                                         background-image: url('https://image.flaticon.com/icons/png/512/1320/1320548.png');
+                                         background-size: cover;
+                                         width: 50px;
+                                         height: 50px;
+                                         border-radius: 50%;
+                                         cursor: pointer;
+                                     }
+
+                                 </style>
+
                                  <script>
                                      mapboxgl.accessToken = 'pk.eyJ1IjoicmFmYWVscGVyZWlyYTk3IiwiYSI6ImNrb2l1OWRoMTBvb3gyeHJtMjc5bHQzcjMifQ.a9JVwy1esI237WyBi2uQUQ';
                                      var map = new mapboxgl.Map({
                                          container: 'map',
+                                         center: [{!! $corporation->long !!},{!! $corporation->lat !!}],
                                          style: 'mapbox://styles/mapbox/streets-v11',
-                                         zoom: 3 // starting zoom
+                                         zoom: 12// starting zoom
                                      });
                                      map.addControl(
                                          new mapboxgl.GeolocateControl({
@@ -119,20 +150,33 @@
                                      );
                                      map.addControl(new mapboxgl.FullscreenControl());
 
-                                     @foreach($users as $user)
 
-                                         new mapboxgl.Marker()
+                                     var el = document.createElement('div');
+                                     el.className = 'corporationIcon';
+
+
+                                     new mapboxgl.Marker(el)
+                                         .setLngLat([{!! $corporation->long !!},{!! $corporation->lat !!}])
+                                         .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                                             .setHTML("<h6>Quartel</h6>"))
+                                         .addTo(map);
+
+                                     @foreach($users as $user)
+                                     var firemanIcon = document.createElement('div');
+                                     firemanIcon.className = 'firemanIcon';
+                                         new mapboxgl.Marker(firemanIcon)
                                              .setLngLat([{!! $user->longitude !!},{!! $user->latitude !!}])
                                              .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-                                                 .setHTML("<img width='20px' src='http://127.0.0.1:8000/images/avatar.png'><br><h6>Bombeiro {!! $user->name !!}</h6>"))
+                                                 .setHTML("<h6>Bombeiro {!! $user->name !!}</h6>"))
                                              .addTo(map);
 
                                      @endforeach
 
                                      @foreach($occurrences as $occurrence)
-
+                                         var occurrenceIcon = document.createElement('div');
+                                         occurrenceIcon.className = 'occurrenceIcon';
                                          @if($occurrence->latitude && $occurrence->longitude != null)
-                                             new mapboxgl.Marker()
+                                             new mapboxgl.Marker(occurrenceIcon)
                                                  .setLngLat([{!! $occurrence->longitude !!},{!! $occurrence->latitude !!}])
                                                  .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
                                                      .setHTML("<img width='20px' src='http://127.0.0.1:8000/images/avatar.png'><br><h6>Ocorrência - {!! $occurrence->title !!}</h6>"))

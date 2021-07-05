@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Corporationdetail;
 use App\Models\Occurrence;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -44,6 +45,8 @@ class HomeController extends Controller
                 ->where('longitude','!=',null)
                 ->get();
 
+        $corporation = Corporationdetail::first();
+
         return view('home')
             ->with('occurrences',$occurrences)
             ->with('users',$users)
@@ -51,7 +54,8 @@ class HomeController extends Controller
             ->with('doneOccurrences',$doneOccurrences)
             ->with('adminsCount',$adminsCount)
             ->with('bombeirosCount',$bombeirosCount)
-            ->with('occurrencesDone',$occurrencesDone);
+            ->with('occurrencesDone',$occurrencesDone)
+            ->with('corporation',$corporation);
 
     }
 }

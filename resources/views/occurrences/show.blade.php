@@ -42,12 +42,23 @@
                         </div>
                         <div class="card-body p-0">
                             <div id="map" style="width: 100%; height: 600px;"></div>
+                            <style>
+                                .corporationIcon {
+                                    background-image: url('https://image.flaticon.com/icons/png/512/1138/1138051.png');
+                                    background-size: cover;
+                                    width: 50px;
+                                    height: 50px;
+                                    border-radius: 50%;
+                                    cursor: pointer;
+                                }
+                            </style>
                             <script>
                                 mapboxgl.accessToken = 'pk.eyJ1IjoicmFmYWVscGVyZWlyYTk3IiwiYSI6ImNrb2l1OWRoMTBvb3gyeHJtMjc5bHQzcjMifQ.a9JVwy1esI237WyBi2uQUQ';
                                 var map = new mapboxgl.Map({
                                     container: 'map',
                                     style: 'mapbox://styles/mapbox/streets-v11',
-                                    zoom: 3 // starting zoom
+                                    center: [{!! $corporation->long !!},{!! $corporation->lat !!}],
+                                    zoom: 10 // starting zoom
                                 });
                                 map.addControl(
                                     new mapboxgl.GeolocateControl({
@@ -59,20 +70,21 @@
                                 );
                                 map.addControl(new mapboxgl.FullscreenControl());
 
+                                var el = document.createElement('div');
+                                el.className = 'corporationIcon';
+
+
+                                new mapboxgl.Marker(el)
+                                    .setLngLat([{!! $corporation->long !!},{!! $corporation->lat !!}])
+                                    .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                                        .setHTML("<h6>Quartel</h6>"))
+                                    .addTo(map);
 
 
                                 var formmatedPositions = [];
 
 
                                 console.log(formmatedPositions)
-
-
-
-
-
-
-
-
 
                             </script>
                         </div>

@@ -206,6 +206,16 @@
 </body>
 </html>
 
+<style>
+    .firemanIcon {
+        background-image: url('http://127.0.0.1:8000/images/avatar.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+</style>
 
 <script>
     $("#group").on('change',function (e){
@@ -234,8 +244,12 @@
     })
 
 
-
+    var firemanMarker
     $(".linhaBombeiro").on('click',function (e){
+        console.log(firemanMarker)
+        if(firemanMarker!=undefined)
+            firemanMarker.remove()
+
 
         const bombeiro_id = $(this).attr("data-bombeiroID");
         const ocorrencia_id = $(this).attr("data-ocorrenciaID");
@@ -251,6 +265,15 @@
             }
 
             var lastItem = data.pop();
+
+            var firemanIcon = document.createElement('div');
+            firemanIcon.className = 'firemanIcon';
+            firemanMarker =  new mapboxgl.Marker(firemanIcon)
+                .setLngLat(lastItem)
+                .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                    .setHTML("<h6>Bombeiro</h6>"))
+                .addTo(map);
+
             map.flyTo({
                 center: [
                     lastItem[0],
