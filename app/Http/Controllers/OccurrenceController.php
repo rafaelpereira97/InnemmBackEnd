@@ -103,8 +103,6 @@ class OccurrenceController extends Controller
 
     public function rejectUser(User $user, Occurrence $occurrence){
         try{
-            OccurrenceUser::where('user_id',$user->id)->where('occurrence_id',$occurrence->id)->first()->delete();
-
             \OneSignal::sendNotificationToUser(
                 "O Quartel informa que não necessita da sua presença na ocorrência !",
                 $user->playerID,
@@ -113,7 +111,6 @@ class OccurrenceController extends Controller
                 $buttons = null,
                 $schedule = null
             );
-
         }catch (\Exception $exception){
             return redirect()->back();
         }

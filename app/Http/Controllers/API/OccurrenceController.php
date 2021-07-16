@@ -79,7 +79,6 @@ class OccurrenceController extends Controller
     }
 
     public function updateOccurrenceUserLocation(Request $request){
-        try{
         $latitude = $request->latitude;
         $longitude = $request->longitude;
         $occurrence_id = $request->occurrence_id;
@@ -105,9 +104,7 @@ class OccurrenceController extends Controller
         }else{
             return response()->json(['result' => 'success', 'inRange' => false, 'debug' => $distance],200);
         }
-        }catch (\Exception $exception){
-            return response()->json(['result' => 'success', 'inRange' => true, 'debug' => $distance],200);
-        }
+
     }
 
     public function getUserInfo(Request $request){

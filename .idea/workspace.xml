@@ -8,10 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/OccurrenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/OccurrenceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OccurrenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OccurrenceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/occurrences/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/occurrences/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,14 +212,7 @@
       <workItem from="1624618031385" duration="7456000" />
       <workItem from="1625310304337" duration="8146000" />
       <workItem from="1625491148881" duration="4938000" />
-      <workItem from="1626431963333" duration="2081000" />
-    </task>
-    <task id="LOCAL-00015" summary="envio de notificaçoes ao criar ocorrencia">
-      <created>1620837949262</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1620837949262</updated>
+      <workItem from="1626431963333" duration="2577000" />
     </task>
     <task id="LOCAL-00016" summary="icons do dashboard">
       <created>1620838419048</created>
@@ -561,7 +550,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625502843277</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="updates.">
+      <created>1626434646226</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1626434646233</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
