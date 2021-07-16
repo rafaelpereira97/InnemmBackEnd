@@ -18,7 +18,7 @@ use App\Http\Controllers\BombeiroController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route('login'));
 });
 
 Auth::routes();
@@ -31,6 +31,7 @@ Route::prefix('occurrences')->group(function(){
     Route::get('/getAutoMessages/{group?}',[OccurrenceController::class, 'getAutoMessages'])->name('occurence.getAutoMessages');
     Route::get('/show/{occurrence}',[OccurrenceController::class, 'show'])->name('occurrence.show');
     Route::get('/getUserLocations/{user?}/{occurrence?}', [OccurrenceController::class, 'getUserLocations'])->name('occurrence.getUserLocations');
+    Route::get('rejectUser/{user}/{occurrence}',[OccurrenceController::class, 'rejectUser'])->name('occurrence.rejectUser');
 });
 
 Route::prefix('groups')->group(function(){

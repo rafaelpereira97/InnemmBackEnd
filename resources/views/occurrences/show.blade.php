@@ -104,6 +104,7 @@
                                         <th>Bombeiro</th>
                                         <th>Estado</th>
                                         <th>Vista</th>
+                                        <th></th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -132,6 +133,7 @@
                                             @else
                                                 <td><span class="badge badge-light">Por Abrir</span></td>
                                             @endif
+                                                <td><a href="{{route('occurrence.rejectUser',[$user,$occurrence])}}" class="btn btn-danger"><i class="fa fa-times"></i></a></td>
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -139,12 +141,29 @@
                             </div>
                             <!-- /.table-responsive -->
                         </div>
-
                         <!-- /.card-body -->
 
+
+
+
+                </div>
+                    <div class="card">
+                        <div class="card-header border-transparent">
+                            <h3 class="card-title">Ações</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body p-0">
+                            <div class="table-responsive p-2">
+                                <div style="  text-align: center;">
+                                <a class="btn btn-danger">Terminar Ocorrência</a>
+                                <a class="btn btn-primary">Reenviar Notificação</a>
+                                </div>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.card-body -->
                         <!-- /.card-footer -->
                     </div>
-                </div>
             </div>
             <!-- /.card -->
 

@@ -6,6 +6,7 @@ use App\Models\Corporationdetail;
 use App\Models\Group;
 use App\Models\Message;
 use App\Models\Occurrence;
+use App\Models\OccurrenceUser;
 use App\Models\Urgency;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -97,6 +98,27 @@ class OccurrenceController extends Controller
         }
 
         return response()->json($positionsJson,200);
+    }
+
+
+    public function rejectUser(User $user, Occurrence $occurrence){
+        try{
+            OccurrenceUser::where('user_id',$user->id)->where('occurrence_id',$occurrence->id)->first()->delete();
+
+            \OneSignal::sendNotificationToUser(
+                "O Quartel informa que não necessita da sua presença na ocorrência !",
+                $user->playerID,
+                $url = null,
+                $data = null,
+                $buttons = null,
+                $schedule = null
+            );
+
+        }catch (\Exception $exception){
+            return redirect()->back();
+        }
+
+        return redirect()->back();
     }
 
 

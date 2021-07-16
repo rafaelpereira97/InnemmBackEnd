@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a101c2f-0b73-457e-93e0-908a1ac36f0d" name="Default Changelist" comment="...">
+    <list default="true" id="6a101c2f-0b73-457e-93e0-908a1ac36f0d" name="Default Changelist" comment="updates.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/OccurrenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/OccurrenceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OccurrenceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OccurrenceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/dist/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/dist/css/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/backend.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/occurrences/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/occurrences/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/occurrences/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/occurrences/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,14 +215,8 @@
       <workItem from="1624538983090" duration="5256000" />
       <workItem from="1624618031385" duration="7456000" />
       <workItem from="1625310304337" duration="8146000" />
-      <workItem from="1625491148881" duration="4538000" />
-    </task>
-    <task id="LOCAL-00014" summary="marcadores dos bombeiros no mapa com html no popup">
-      <created>1620835788851</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1620835788851</updated>
+      <workItem from="1625491148881" duration="4938000" />
+      <workItem from="1626431963333" duration="2081000" />
     </task>
     <task id="LOCAL-00015" summary="envio de notificaçoes ao criar ocorrencia">
       <created>1620837949262</created>
@@ -561,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625332095474</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="updates.">
+      <created>1625502843276</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1625502843277</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +582,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="marcadores dos bombeiros no mapa" />
     <MESSAGE value="marcadores dos bombeiros no mapa com html no popup" />
     <MESSAGE value="envio de notificaçoes ao criar ocorrencia" />
     <MESSAGE value="icons do dashboard" />
@@ -607,6 +606,7 @@
     <MESSAGE value="api get average time to arrive" />
     <MESSAGE value="CRUD" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="updates." />
+    <option name="LAST_COMMIT_MESSAGE" value="updates." />
   </component>
 </project>
